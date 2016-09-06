@@ -1,4 +1,4 @@
-foundtruck.controller('UserLoginController', ['$scope','UserLoginService', function($scope, UserLoginService) {
+foundtruck.controller('UserLoginController', ['$scope','UserLoginService', '$location', function($scope, UserLoginService, $location) {
 
 	// Test if login data is registered
 	$scope.doLogin = function(user) {
@@ -8,9 +8,9 @@ foundtruck.controller('UserLoginController', ['$scope','UserLoginService', funct
 			}.bind(this));
 
 			if (isValidLogin) {
-				console.log('is valid');
+				$location.path('/views/user/findlocation.html');
 			} else {
-				console.log('is not valid');
+				alert('Email or password is not valid');
 			}
 		}.bind(this));
 	};
