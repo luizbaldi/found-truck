@@ -1,0 +1,16 @@
+<div class="container content">
+    <form class="form-signin">
+        <label for="inputEmail">E-mail</label>
+        <input type="email" class="form-control" ng-model="user.email">
+        <label for="inputPassword">Senha</label>
+        <input type="password" class="form-control" ng-model="user.password">
+        <div class="checkbox">
+            <label>
+                <input type="checkbox" ng-model="user.keepLogged">Me manter conectado
+            </label>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block" ng-click="doLogin(user)">Login</button>
+        <button type="button" class="btn btn-primary btn-block">Cadastre-se</button>    
+        <button type="button" class="btn btn-primary btn-block">Entrar sem logar</button>
+    </form>
+</div>
