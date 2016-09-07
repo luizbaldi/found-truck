@@ -2,6 +2,11 @@
 	background-color: #fff5e6; 
 }
 
-.content {
-	margin-top: 70px;
+#menu{
+	background-color: orange;
+	padding-bottom: 4px;
+}
+
+#logo{
+	padding-top: 2px;
 }

@@ -8,7 +8,7 @@ foundtruck.controller('UserLoginController', ['$scope','UserLoginService', '$loc
 			}.bind(this));
 
 			if (isValidLogin) {
-				$location.path('/views/user/findlocation.html');
+				alert('Valid email and password');
 			} else {
 				alert('Email or password is not valid');
 			}
