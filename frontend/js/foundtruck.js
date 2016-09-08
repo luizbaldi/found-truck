@@ -4,11 +4,11 @@ foundtruck.config(function ($routeProvider) {
 	$routeProvider
 		.when('/', {
 			controller: 'UserLoginController',
-			templateUrl: 'views/user/login.html'
+			templateUrl: 'views/user/checkposition.html'
 		})
 		.when('/user/findlocation', {
 			controller: 'FindLocationController',
-			templateUrl: 'views/user/findlocation'
+			templateUrl: 'views/user/findlocation.html'
 		})
 		.otherwise({
 			redirectTo: '/'
