@@ -1,12 +1,66 @@
+body{
+	background-color: #FF9800;
+}
+
 .jumbotron {
 	background-color: #fff5e6; 
 }
 
 #menu{
-	background-color: orange;
+	background-color: #F57C00;
 	padding-bottom: 4px;
 }
 
 #logo{
 	padding-top: 2px;
+}
+
+#cabecalho{
+	padding-top: 0.5%;
+	padding-bottom: 0.5%;
+	background-color: #F57C00;
+		
+}
+
+h1{
+	font-family: 'Oswald';
+	padding-bottom: 5%;
+	padding-top: 5%;
+	color:#FFFFFF;
+}
+
+.text-box{
+	padding-top: 2%;
+	padding-bottom: 2%;
+}
+
+.input-text{
+	margin-top: 2%;
+	margin-bottom: 1%;
+	font-size: 26px;
+	font-family: 'Oswald';
+	color: #FFFFFF;	
+	letter-spacing: 2px;
+}
+
+.text-checkbox{
+	color: #212121;
+	font-family: 'Oswald';
+}
+
+.button{
+	padding-top: 1%;
+	padding-bottom: 1%;
+	margin-top: 1%;
+	margin-bottom: 1%;
+	font-size: 20px;
+	font-family: 'Oswald';
+}
+
+.btn-danger{
+	background-color: #FF5722;
+}
+
+.btn-warning{
+	background-color: #212121;
 }
