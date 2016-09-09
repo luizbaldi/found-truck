@@ -1,16 +1,59 @@
-<div class="container content">
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>FOUNDTRUCK</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, shrink-to-fit=no, initial-scale=1">
+    <!-- JavaScript Files -->
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.5/angular.min.js"></script>
+    <script src="https://code.angularjs.org/1.2.28/angular-route.min.js"></script>
+    <script src="js/libs/jquery-2.1.1.min.js"></script>
+    <!-- Modules -->
+    <script src="js/foundtruck.js"></script>
+    <!-- Services -->
+    <script src="js/services/UserLoginService.js"></script>
+    <!-- Controllers -->
+    <script src="js/controllers/UserLoginController.js"></script>
+    <script src="js/controllers/FindLocationController.js"></script>
+    <!-- Directives -->
+    <!-- CSS Files -->
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+    <!-- BOOTSTRAP -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <script src="js/libs/bootstrap.min.js"></script>
+    <!-- NEW CSS -->
+    <link href="css/style.css" rel="stylesheet">
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Fjalla+One" rel="stylesheet">
+</head>
+
+<body ng-app="foundtruck">
+    <div id="cabecalho" class="text-center container-fluid col-md-12 col-xs-12">    	
+    		<img src="img/new_logo_pequena.png"/>
+    </div>
+    <div class="text-center container col-xs-10 col-xs-offset-1 col-md-offset-3 col-md-6 content">
     <form class="form-signin" ng-submit="doLogin(user)">
-        <label for="inputEmail">E-mail</label>
-        <input type="email" class="form-control" ng-model="user.email">
-        <label for="inputPassword">Senha</label>
-        <input type="password" class="form-control" ng-model="user.password">
+        <label class="input-text text-email" for="inputEmail">E-mail</label>
+        <input type="email" class="text-box form-control" ng-model="user.email">
+        <label class="input-text" for="inputPassword">Senha</label>
+        <input type="password" class="text-box form-control" ng-model="user.password">
         <div class="checkbox">
-            <label>
+            <label class="text-checkbox">
                 <input type="checkbox" ng-model="user.keepLogged">Me manter conectado
             </label>
         </div>
-        <button type="submit" class="btn btn-primary btn-block">Login</button>
-        <button type="button" class="btn btn-primary btn-block">Cadastre-se</button>    
-        <button type="button" class="btn btn-primary btn-block">Entrar sem logar</button>
+        <button type="submit" class="button btn btn-danger btn-block">ENTRAR</button>
+        <button type="button" class="button btn btn-primary btn-block">CADASTRE-SE</button>    
+        <button type="button" class="button btn btn-warning btn-block">ENTRAR SEM LOGIN</button>
     </form>
 </div>
+
+
+</body>
+
+</html>
