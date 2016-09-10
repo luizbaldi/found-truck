@@ -63,12 +63,58 @@ h1{
 
 .btn-danger{
 	background-color: #FF5722;
+	border: 0px;
 }
 
 .btn-warning{
 	background-color: #212121;
+	border: 0px;
 }
+
+.btn-warning:hover{
+	background-color: #000;
+}
+
+.btn-primary{
+	background-color: #197eb2;
+	border: 0px;
+}
+
+.btn-primary:hover{
+	background-color: #15628a;
+}
+
 
 #menu-toggle {
 	margin-top: 10px;
+}
+
+#findlocation{
+	margin-top: 10%;
+}
+
+.findlblDigite{
+	color:#FFF;
+	font-size: 1.5em;
+	font-family: 'Oswald';
+	margin-bottom: 2%;
+		letter-spacing: 2px;
+}
+
+.findlblcep{
+	margin-top: 4%;
+	margin-bottom: 4%;
+	color:#FFF;
+	font-size:0.9em;
+	font-family: 'Oswald';
+	letter-spacing: 2px;
+}
+
+.findbtn{
+	font-size: 20px;
+	font-family: 'Oswald';
+}
+
+.btn{
+	border-radius: 10px 10px 10px 10px;
 }
