@@ -23,11 +23,15 @@ foundtruck.config(function($stateProvider, $urlRouterProvider) {
             url: '/findlocationalternative',
             controller: 'FindLocationAlternativeController',
             templateUrl: 'views/user/findlocationalternative.html'
+<<<<<<< HEAD
         })
         .state('clientlogin',{
             url: '/clientlogin',
             controller: 'ClientLoginController',
             templateUrl: 'views/user/clientlogin.html'
         })
+=======
+        });
+>>>>>>> 364b6dad51d62af5fc0174a33bda57d857a59122
        
 });
