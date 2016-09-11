@@ -1,6 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-
 <head>
     <title>FOUNDTRUCK</title>
 
@@ -34,38 +31,16 @@
     <script src="js/directives/NavMenuDirective.js"></script>
         <link href="css/style.css" rel="stylesheet">
 </head>
-
-<body ng-app="foundtruck">
-	<div id="wrapper">
-	    <!-- Parte Lateral -->
-	    <div id="sidebar-wrapper">
-	        <ul class="sidebar-nav">
-	            <li>
-	                <span>CONTA</span>
-
-	                <a href="#findlocation">Editar Dados</a>
-	            </li>
-	            <li>
-	                <a href="#">Sair</a>
-	            </li>
-	        </ul>
-	    </div>
-		<!-- Parte do Menu -->
-	     <div id="menu" class="col-md-12 col-xs-12">
-	        <div class="container-fluid">
-	            <div class="row">
-	                <div class="col-md-1 col-xs-2 text-center">
-	                	<a style="text-decoration:none" class="fa fa-bars fa-lg" id="menu-toggle" href="#menu-toggle"></a>
-	                </div>
-	                <div id="logo" class="text-center col-md-11 col-xs-10">
-	                        <img  src="img/new_logo_pequena.png"/>
-	                </div>
-	            </div>
-	        </div>
-	    </div>
-	</div>
-
-    <div ui-view></div>
+<body>
+    <div id="findlocationalternative" class="col-md-6 col-md-offset-3 col-xs-10 col-xs-offset-1">
+        <form class="text-center">
+            <label class="find2lbl col-md-12 col-xs-12">DADOS ENDEREÇO</label>
+            <input type="text" class="find2txt form-control" placeholder="ESTADO"/>
+            <input type="text" class="find2txt form-control" placeholder="CIDADE"/>
+            <input type="text" class="find2txt form-control" placeholder="DIGITE SEU ENDEREÇO"/>
+            <input type="text" class="find2txt form-control" placeholder="N° CASA/APARTAMENTO"/>
+            <a href="#findlocation"><button class="find2btn btn btn-danger col-md-1"><</button></a>
+            <button class="find2btn btn btn-danger col-md-10 col-md-offset-1">BUSCAR FOODTRUCKS</button>
+         </form>
+    </div>
 </body>
-
-</html>

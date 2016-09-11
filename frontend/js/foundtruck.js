@@ -13,5 +13,16 @@ foundtruck.config(function($stateProvider, $urlRouterProvider) {
         	url: '/findlocation',
         	controller: 'FindLocationController',
             templateUrl: 'views/user/findlocation.html'         
-        });
+        })
+         .state('findfoodtruck', {
+            url: '/findfoodtruck',
+            controller: 'FindFoodTruckController',
+            templateUrl: 'views/user/findfoodtruck.html' 
+        })
+        .state('findlocationalternative',{
+            url: '/findlocationalternative',
+            controller: 'FindLocationAlternativeController',
+            templateUrl: 'views/user/findlocationalternative.html'
+        })
+       
 });
