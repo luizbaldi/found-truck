@@ -24,5 +24,10 @@ foundtruck.config(function($stateProvider, $urlRouterProvider) {
             controller: 'FindLocationAlternativeController',
             templateUrl: 'views/user/findlocationalternative.html'
         })
+        .state('clientlogin',{
+            url: '/clientlogin',
+            controller: 'ClientLoginController',
+            templateUrl: 'views/user/clientlogin.html'
+        })
        
 });

@@ -29,16 +29,16 @@
     <script src="js/controllers/CheckPositionController.js"></script>
     <!-- Directives -->
     <script src="js/directives/NavMenuDirective.js"></script>
-        <link href="css/style.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
 </head>
 <body>
     <div id="findlocationalternative" class="col-md-6 col-md-offset-3 col-xs-10 col-xs-offset-1">
         <form class="text-center">
             <label class="find2lbl col-md-12 col-xs-12">DADOS ENDEREÇO</label>
-            <input type="text" class="find2txt form-control" placeholder="ESTADO"/>
+            <input type="text" maxlength="2" class="find2txt form-control" placeholder="ESTADO"/>
             <input type="text" class="find2txt form-control" placeholder="CIDADE"/>
             <input type="text" class="find2txt form-control" placeholder="DIGITE SEU ENDEREÇO"/>
-            <input type="text" class="find2txt form-control" placeholder="N° CASA/APARTAMENTO"/>
+            <input type="number" class="find2txt form-control" placeholder="N° CASA/APARTAMENTO"/>
             <a href="#findlocation"><button class="find2btn btn btn-danger col-md-1"><</button></a>
             <button class="find2btn btn btn-danger col-md-10 col-md-offset-1">BUSCAR FOODTRUCKS</button>
          </form>

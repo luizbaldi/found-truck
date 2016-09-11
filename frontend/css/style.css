@@ -30,7 +30,7 @@ h1{
 }
 
 .text-email{
-	padding-top: 16%;
+	padding-top: 1%;
 }
 
 .text-box{
@@ -149,4 +149,16 @@ h1{
 
 #findlocationalternative a{
 	color:#FFF;
+}
+
+.lblarearestrita{
+	color:#FFF;
+	font-size: 2.5em;
+	font-family: 'Oswald';
+	letter-spacing: 2px;
+}
+
+.frmclient{
+	margin-top: 20%;
+
 }

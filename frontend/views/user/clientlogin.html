@@ -1,0 +1,54 @@
+<html>
+	<head>
+    <title>FOUNDTRUCK</title>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, shrink-to-fit=no, initial-scale=1">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+
+    <!-- CSS Files -->
+    <link rel="stylesheet" type="text/css" href="../../css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../../css/font-awesome.min.css">
+    <link href="../../css/simple-sidebar.css" rel="stylesheet">
+    <link href="../../css/style.css" rel="stylesheet">
+    
+    <!-- JavaScript Files -->
+    <script src="js/libs/angular.min.js"></script>
+    <script src="js/libs/angular-ui-router.min.js"></script>
+    <script src="js/libs/jquery-2.1.1.min.js"></script>
+    <script src="js/libs/bootstrap.js"></script>
+    <script src="js/libs/side-menu.js"></script>
+    <!-- Modules -->
+    <script src="js/foundtruck.js"></script>
+    <!-- Services -->
+    <script src="js/services/UserLoginService.js"></script>
+    <!-- Controllers -->
+    <script src="js/controllers/UserLoginController.js"></script>
+    <script src="js/controllers/FindLocationController.js"></script>
+    <script src="js/controllers/CheckPositionController.js"></script>
+    <!-- Directives -->
+    <script src="js/directives/NavMenuDirective.js"></script>
+</head>
+<body>
+	<div ui-view>
+	    <div class="text-center container col-xs-10 col-xs-offset-1 col-md-offset-3 col-md-6 content">
+	        <form class="form-signin frmclient" ng-submit="doLogin(user)">
+	        	<label class="lblarearestrita">ÁREA RESTRITA</label>
+	            <label class="col-md-12 col-xs-12 input-text text-email" for="inputEmail">E-mail</label>
+	            <input type="email" class="text-box form-control" ng-model="user.email" placeholder="Digite seu E-mail">
+	            <label class="input-text" for="inputPassword">Senha</label>
+	            <input type="password" class="text-box form-control" ng-model="user.password" placeholder="Digite sua senha">
+	            <div class="checkbox">
+	                <label class="text-checkbox">
+	                    <input type="checkbox" ng-model="user.keepLogged">Me manter conectado
+	                </label>
+	            </div>
+	            <button type="submit" class="button btn btn-danger btn-block">ENTRAR</button>
+	        </form>
+	    </div>
+	</div>
+</body>
+</html>
