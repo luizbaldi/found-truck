@@ -23,6 +23,6 @@ foundtruck.config(function($stateProvider, $urlRouterProvider) {
             url: '/findlocationalternative',
             controller: 'FindLocationAlternativeController',
             templateUrl: 'views/user/findlocationalternative.html'
-        })
+        });
        
 });

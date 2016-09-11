@@ -1,5 +1,6 @@
-foundtruck.controller('FindLocationController', ['$scope', '$location', function($scope, $location) {
-	$scope.goBack = function() {
-		$location.path('#/');
+foundtruck.controller('FindLocationController', ['$scope', '$state', function($scope, $state) {
+
+	$scope.changeView = function(viewName) {
+		$state.go('findlocationalternative');
 	};
 }]);
