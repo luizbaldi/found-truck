@@ -163,13 +163,20 @@ h1 {
 }
 
 #error{
-	margin-top: 20%;
+	margin-top: 18%;
 }
 
 .msgErro {
 	font-size: 5em;
 	color:#FFF;
 	font-family: 'Oswald';
+}
+
+.submsgErro{
+	font-size: 2em;
+	color:#FFF;
+	font-family: 'Oswald';
+	letter-spacing: 2px;
 }
 
 #nav_logo {
@@ -261,3 +268,9 @@ input:checked + .slider:before {
 #main{
 	margin-top: 10%;
 }
+
+#login{
+	margin-top:8%;
+}
+
+/* FOOTER */

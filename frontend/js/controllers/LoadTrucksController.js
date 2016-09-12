@@ -39,7 +39,7 @@ foundtruck.controller('LoadTrucksController', ['$scope', 'LoadTrucksService', 'l
 	var createMap = function(geocodedLocation, trucksAddress) {
 		// Create mapobtions object to define properties
 		var mapOptions = {
-			zoom: 12,
+			zoom: 14,
 			center: geocodedLocation
 		};
 
