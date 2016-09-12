@@ -171,3 +171,13 @@ h1 {
 	color:#FFF;
 	font-family: 'Oswald';
 }
+
+#nav_logo {
+	background-color: #F57C00;
+	padding-bottom: 4px;
+	padding-top:3px;
+}
+
+#nav_logo img{
+	margin-right: 3%;
+}
