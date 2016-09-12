@@ -41,7 +41,7 @@ h1 {
 .input-text {
 	margin-top: 2%;
 	margin-bottom: 1%;
-	font-size: 26px;
+	font-size: 1.5em;
 	font-family: 'Oswald';
 	color: #FFFFFF;	
 	letter-spacing: 2px;
@@ -136,7 +136,7 @@ h1 {
 
 .find2lbl {
 	margin-bottom: 2%;
-	font-size: 2em;
+	font-size: 1.5em;
 	color:#FFF;
 	font-family: 'Oswald';
 	letter-spacing: 2px;
