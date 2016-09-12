@@ -15,7 +15,7 @@ body {
 	padding-top: 2px;
 }
 
-#cabecalho{
+#cabecalho	{
 	padding-top: 0.5%;
 	padding-bottom: 0.5%;
 	background-color: #F57C00;	
@@ -66,21 +66,21 @@ h1 {
 	border: 0px;
 }
 
-.btn-warning{
+.btn-warning {
 	background-color: #212121;
 	border: 0px;
 }
 
-.btn-warning:hover{
+.btn-warning:hover {
 	background-color: #000;
 }
 
-.btn-primary{
+.btn-primary {
 	background-color: #197eb2;
 	border: 0px;
 }
 
-.btn-primary:hover{
+.btn-primary:hover {
 	background-color: #15628a;
 }
 
@@ -89,11 +89,11 @@ h1 {
 	margin-top: 10px;
 }
 
-#findlocation{
+#findlocation {
 	margin-top: 10%;
 }
 
-.findlblDigite{
+.findlblDigite {
 	color:#FFF;
 	font-size: 1.5em;
 	font-family: 'Oswald';
@@ -101,7 +101,7 @@ h1 {
 	letter-spacing: 2px;
 }
 
-.findlblcep{
+.findlblcep {
 	margin-top: 4%;
 	margin-bottom: 4%;
 	color:#FFF;
@@ -110,31 +110,31 @@ h1 {
 	letter-spacing: 2px;
 }
 
-.findbtn{
+.findbtn {
 	font-size: 20px;
 	font-family: 'Oswald';
 }
 
-.find-textbox{
+.find-textbox {
 	font-family: 'Oswald';
 }
 
-.btn{
+.btn {
 	border-radius: 10px 10px 10px 10px;
 }
 
-.find2btn{
+.find2btn {
 	font-size: 20px;
 	font-family: 'Oswald';
 }
 
-.find2txt{
+.find2txt {
 	margin-top: 2%;
 	margin-bottom: 2%;
 	font-family: 'Oswald';
 }
 
-.find2lbl{
+.find2lbl {
 	margin-bottom: 2%;
 	font-size: 2em;
 	color:#FFF;
@@ -142,22 +142,32 @@ h1 {
 	letter-spacing: 2px;
 }
 
-#findlocationalternative{
+#findlocationalternative {
 	margin-top:10%;
 }
 
-#findlocationalternative a{
+#findlocationalternative a {
 	color:#FFF;
 }
 
-.lblarearestrita{
+.lblarearestrita {
 	color:#FFF;
 	font-size: 2.5em;
 	font-family: 'Oswald';
 	letter-spacing: 2px;
 }
 
-.frmclient{
+.frmclient {
 	margin-top: 20%;
 
+}
+
+#error{
+	margin-top: 30%;
+}
+
+.msgErro {
+	font-size: 5em;
+	color:#FFF;
+	font-family: 'Oswald';
 }
