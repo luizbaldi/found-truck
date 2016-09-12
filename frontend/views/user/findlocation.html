@@ -2,11 +2,13 @@
 	
 	<form>
 		<div id="findlocation" class="text-center col-md-8 col-md-offset-2 col-xs-10 col-xs-offset-1">
-			<label class="findlblDigite">DIGITE SUA LOCALIDADE</label>
-			<input id="cep" maxlength="8" type="text" class="form-control find-textbox" placeholder="CEP"/>
-			<label class="findlblcep">NÃO SABE O SEU CEP ? <a style="text-decoration:none" ng-click="changeView('findlocationalternative')"">CLIQUE AQUI</a> , OU</label>
+			<label class="findlblDigite">ENCONTRE SUA LOCALIZAÇÃO</label>
+			<!-- <input id="cep" maxlength="8" type="text" class="form-control find-textbox" placeholder="Digite sua localização"/> -->
 			<button type="button" class="findbtn btn btn-primary btn-block" name="btnLocalizar" ng-click="findMe()">LOCALIZE-ME</button>
-			<button type="button" class="findbtn btn btn-danger btn-block" name="btnBuscar" ng-click="changeView('findfoodtruck')">BUSCAR FOODTRUCKS</button>
+			<!-- <button type="button" class="findbtn btn btn-danger btn-block" name="btnBuscar" ng-click="changeView('findfoodtruck')">BUSCAR FOODTRUCKS</button> -->
+			<p>
+				<label class="findlblcep">OU  <a style="text-decoration:none" ng-click="changeView('findlocationalternative')">CLIQUE AQUI</a> PARA DIGITAR SUA LOCALIZAÇÃO</label>
+			</p>
 		</div>
 	</form>
 </div>
