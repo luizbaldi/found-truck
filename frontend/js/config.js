@@ -1,1 +1,1 @@
-window.appMode = "user";
+window.appMode = "manager";
