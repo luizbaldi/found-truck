@@ -33,7 +33,11 @@ foundtruck.config(function($stateProvider, $urlRouterProvider) {
                 templateUrl: 'views/manager/clientlogin.html'
             });
     } else {
-        console.log('Modo não encontrado');
+        $stateProvider
+            .state('error',{
+                url: '/',
+                templateUrl: 'views/error.html'
+            });
     }
 
 });
