@@ -62,7 +62,8 @@ foundtruck.controller('LoadTrucksController', ['$scope', 'LoadTrucksService', 'l
 		var marker = new google.maps.Marker({
 			position: point,
 			map: map,
-			title: title
+			title: title,
+			icon: "img/ico_maps.png"
 		});
 		marker.setMap(map);
 	};
