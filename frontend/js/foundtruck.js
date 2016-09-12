@@ -31,6 +31,10 @@ foundtruck.config(function($stateProvider, $urlRouterProvider) {
                 url: '/',
                 controller: 'ManagerLoginController',
                 templateUrl: 'views/manager/clientlogin.html'
+            })
+            .state('main',{
+                url:'/main',
+                templateUrl: 'views/manager/main.html'
             });
     } else {
         $stateProvider
