@@ -30,5 +30,5 @@ foundtruck.controller('FindLocationController', ['$scope', '$state', function($s
 	        console.log(error);
 	    }
 	};
-	
+
 }]);

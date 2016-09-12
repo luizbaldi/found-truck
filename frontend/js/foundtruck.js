@@ -15,20 +15,15 @@ foundtruck.config(function($stateProvider, $urlRouterProvider) {
             	controller: 'FindLocationController',
                 templateUrl: 'views/user/findlocation.html'         
             })
-             .state('findfoodtruck', {
-                url: '/findfoodtruck',
-                controller: 'FindFoodTruckController',
-                templateUrl: 'views/user/findfoodtruck.html' 
-            })
             .state('findlocationalternative',{
                 url: '/findlocationalternative',
                 controller: 'FindLocationAlternativeController',
                 templateUrl: 'views/user/findlocationalternative.html'
             })
-            .state('clientlogin',{
-                url: '/clientlogin',
-                controller: 'ClientLoginController',
-                templateUrl: 'views/user/clientlogin.html'
+            .state('loadtrucks', {
+                url: '/loadtrucks',
+                controller: 'LoadTrucksController',
+                templateUrl: 'views/user/loadtrucks.html' 
             });
     } else if (window.appMode == "manager") {
         $stateProvider
