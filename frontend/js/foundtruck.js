@@ -1,4 +1,4 @@
-var foundtruck = angular.module('foundtruck', ['ui.router']);
+var foundtruck = angular.module('foundtruck', ['ui.router', 'LocalStorageModule']);
 
 foundtruck.config(function($stateProvider, $urlRouterProvider) {
 	$urlRouterProvider.otherwise('/');
@@ -41,3 +41,9 @@ foundtruck.config(function($stateProvider, $urlRouterProvider) {
     }
 
 });
+
+foundtruck.config(['localStorageServiceProvider', function(localStorageServiceProvider) {
+    localStorageServiceProvider
+        .setPrefix('foundtruck')
+        .setStorageType('sessionStorage');            
+}]);

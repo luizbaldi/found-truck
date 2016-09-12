@@ -1,0 +1,20 @@
+[
+    {
+        "id": 1,
+        "title": "Baldi's Truck",
+        "longitude": "-43.96621",
+        "latitude": "-19.936383"
+    },
+    {
+        "id": 2,
+        "title": "Cotemig's Truck",
+        "longitude": "-43.9669872",
+        "latitude": "-19.9334783"
+    },
+    {
+        "id": 3,
+        "title": "BH Truck",
+        "longitude": "-43.9657584",
+        "latitude": "-19.932382"
+    }
+]

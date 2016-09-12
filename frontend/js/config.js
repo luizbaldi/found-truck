@@ -1,1 +1,1 @@
-window.appMode = "userid";
+window.appMode = "user";
