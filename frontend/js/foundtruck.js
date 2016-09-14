@@ -36,11 +36,17 @@ foundtruck.config(function($stateProvider, $urlRouterProvider) {
                 url:'/main',
                 templateUrl: 'views/manager/main.html'
             });
+    } else if (window.appMode == "newmanager") {
+        $stateProvider
+            .state('newmanager',{
+                url: '/',
+                templateUrl: '../backend/cadtruck.php'
+            });
     } else {
         $stateProvider
             .state('error',{
                 url: '/',
-                templateUrl: 'views/cadtruck.php'
+                templateUrl: 'views/error.html.php'
             });
     }
 

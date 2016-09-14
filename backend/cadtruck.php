@@ -2,7 +2,7 @@
 	<div class="col-md-12 col-xs-12 text-center" id="error">
 		<label class="submsgErro col-md-12 col-xs-12">CADASTRO DE FOODTRUCK</label>
 
-		<form method="POST" action="json/convert.php" class="form-horizontal col-md-8 col-md-offset-2 col-xs-10 col-xs-offset-1">
+		<form method="POST" action="../backend/convert.php" class="form-horizontal col-md-8 col-md-offset-2 col-xs-10 col-xs-offset-1">
 
 <!-- Text input-->
 <div class="form-group"> 

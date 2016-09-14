@@ -7,11 +7,11 @@
     $longitude = $_POST['txtLongitude'];
 
 
-    $insert = "insert into truck(title,latitude,longitude)VALUES('$nome',$latitude,$longitude)";
+    $insert = "insert into foodtruck(title,latitude,longitude)VALUES('$nome',$latitude,$longitude)";
     mysqli_query($connection, $insert) or die("Error in Selecting " . mysqli_error($connection));
 
     //fetch table rows from mysql db
-    $sql = "select * from truck";
+    $sql = "select * from foodtruck";
     $result = mysqli_query($connection, $sql) or die("Error in Selecting " . mysqli_error($connection));
 
     //create an array
