@@ -40,7 +40,7 @@ foundtruck.config(function($stateProvider, $urlRouterProvider) {
         $stateProvider
             .state('error',{
                 url: '/',
-                templateUrl: 'views/error.html'
+                templateUrl: 'views/cadtruck.php'
             });
     }
 

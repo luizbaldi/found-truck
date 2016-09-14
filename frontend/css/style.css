@@ -163,7 +163,7 @@ h1 {
 }
 
 #error{
-	margin-top: 18%;
+	margin-top: 10%;
 }
 
 .msgErro {
@@ -273,4 +273,7 @@ input:checked + .slider:before {
 	margin-top:8%;
 }
 
-/* FOOTER */
+#cbxEstado option{
+	font-family: 'Oswald';
+	font-size:1.5em;
+}
