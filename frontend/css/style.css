@@ -277,3 +277,26 @@ input:checked + .slider:before {
 	font-family: 'Oswald';
 	font-size:1.5em;
 }
+
+.footer {
+	height: 34px;
+	display: block;
+	color: #F5F5F5;
+	position:fixed;
+    left:0px;
+    bottom:0px;
+    height:30px;
+    width:100%;
+    background-color: #F57C00
+}
+
+.footer .left-action {
+	width: 25%;
+	height: 100%;
+	text-align: center;
+    font-size: 1.2em;
+}
+
+.footer .left-action:hover {
+	background-color: #ffaf39;
+}

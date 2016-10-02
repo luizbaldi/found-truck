@@ -1,0 +1,3 @@
+foundtruck.controller('UtilitiesController', function() {
+
+});

@@ -1,1 +1,1 @@
-window.appMode = "newmanager"
+window.appMode = "user";

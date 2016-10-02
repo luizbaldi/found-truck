@@ -2,5 +2,5 @@
 A simple project developed using Web Languages
 
 ##Contributors
-Luiz Baldi
-Leonardo Pego
+###Luiz Baldi
+###Leonardo Pego

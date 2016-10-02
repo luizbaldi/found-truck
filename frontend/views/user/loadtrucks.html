@@ -1,4 +1,14 @@
 
 <div ui-view ng-init="loadMap()">
-    <div id="googleMap" class="col-md-12 col-xs-12" style="height:593px;"></div>  
+	<div class="row">
+    	<div id="googleMap" class="col-md-10 col-xs-10" style="height:593px;"></div>
+	</div>
+    <div class="row">
+	    <div class="footer">
+	    	<div class="left-action" ng-click=goBack();>
+	    		<i class="fa fa-angle-left"></i>
+	    		Voltar
+	    	</div>
+	    </div>
+    </div>
 </div>  

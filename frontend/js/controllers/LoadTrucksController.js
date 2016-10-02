@@ -18,6 +18,10 @@ foundtruck.controller('LoadTrucksController', ['$scope', 'LoadTrucksService', 'l
 		}
 	};
 
+	$scope.goBack = function() {
+		$state.go('findlocation');
+	};
+
 	var geocodeUserLocation = function(userLocation, trucksAddress) {
 		// Create geocoder
 		geocoder = new google.maps.Geocoder();
@@ -27,7 +31,13 @@ foundtruck.controller('LoadTrucksController', ['$scope', 'LoadTrucksService', 'l
 
 		geocoder.geocode({'address': formattedAddress}, function(results, status) {
 			if (status == google.maps.GeocoderStatus.OK) {
-				var geocodedLocation = results[0].geometry.location;
+
+				// Creates a simpler object containing only lat and lng properties
+				var geocodedLocation = {
+					lat: results[0].geometry.location.lat(),
+					lng: results[0].geometry.location.lng()
+				};
+
 				createMap(geocodedLocation, trucksAddress);
 			} else {
 				alert('Não foi possível encontrar o endereço');
@@ -46,7 +56,8 @@ foundtruck.controller('LoadTrucksController', ['$scope', 'LoadTrucksService', 'l
 		// Create the map
 		map = new google.maps.Map(document.getElementById('googleMap'), mapOptions);
 
-		// createMarker(map, new google.maps.LatLng(-19.9334783, -43.9669872), 'pow pow pow');
+		// Create an marker for user current location
+		createMarker(map, new google.maps.LatLng(geocodedLocation.lat, geocodedLocation.lng), 'Seu endereço', 'user');
 
 		// Loop through trucks and add them into the map
 		for (var i = 0; i < trucksAddress.length; i++) {
@@ -54,16 +65,24 @@ foundtruck.controller('LoadTrucksController', ['$scope', 'LoadTrucksService', 'l
 			var currentAddress = trucksAddress[i];
 
 			// Adding a new marker for the object
-			createMarker(map, new google.maps.LatLng(currentAddress.latitude, currentAddress.longitude), currentAddress.title);
+			createMarker(map, new google.maps.LatLng(currentAddress.latitude, currentAddress.longitude), currentAddress.title, 'truck');
 		}
 	};
 
-	var createMarker = function(map, point, title) {
+	var createMarker = function(map, point, title, markerType) {
+		var iconPath;
+
+		if (markerType == "user") {
+			iconPath = "img/user_ico_maps.png"; 
+		} else {
+			iconPath = "img/truck_ico_maps.png";
+		}
+
 		var marker = new google.maps.Marker({
 			position: point,
 			map: map,
 			title: title,
-			icon: "img/ico_maps.png"
+			icon: iconPath
 		});
 		marker.setMap(map);
 	};
