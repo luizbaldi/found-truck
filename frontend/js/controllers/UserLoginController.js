@@ -15,4 +15,8 @@ foundtruck.controller('UserLoginController', ['$scope','UserLoginService', '$sta
 			}
 		}.bind(this));
 	};
+
+	$scope.openWindow = function(windowName) {
+		$state.go(windowName);
+	};
 }]);

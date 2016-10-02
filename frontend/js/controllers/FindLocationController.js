@@ -42,4 +42,7 @@ foundtruck.controller('FindLocationController', ['$scope', '$state', 'localStora
 		console.log(error);
 	};
 
+	$scope.toggleMenu = function() {
+		$("#wrapper").toggleClass("toggled");
+	};
 }]);
