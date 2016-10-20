@@ -112,7 +112,7 @@ h1 {
 }
 
 .findbtn {
-	font-size: 20px;
+	font-size: 2em;
 	font-family: 'Oswald';
 }
 
@@ -404,6 +404,7 @@ input:checked + .slider:before {
 }
 
 @media(min-width:768px) {
+
     #wrapper {
         padding-left: 250px;
     }
@@ -428,4 +429,10 @@ input:checked + .slider:before {
         position: relative;
         margin-right: 0;
     }
+}
+
+@media(max-width:768px) {
+
+    .mobile{margin-top: 30%;}
+
 }
