@@ -433,6 +433,6 @@ input:checked + .slider:before {
 
 @media(max-width:768px) {
 
-    .mobile{margin-top: 30%;}
+    .mobile{margin-top: 31%;}
 
 }
