@@ -1,6 +1,10 @@
 <?php
-        $connection = mysqli_connect("localhost","root","","foundtruck") or die("Error " . mysqli_error($connection));
 
+    include "class/connection.php";
+
+    $connection = new connection;
+
+    $connection->connect();
 
     $nome = $_POST['txtNome'];
     $latitude = $_POST['txtLatitude'];
@@ -8,11 +12,11 @@
 
 
     $insert = "insert into foodtruck(title,latitude,longitude)VALUES('$nome',$latitude,$longitude)";
-    mysqli_query($connection, $insert) or die("Error in Selecting " . mysqli_error($connection));
+    $connection->query($insert);
 
     //fetch table rows from mysql db
     $sql = "select * from foodtruck";
-    $result = mysqli_query($connection, $sql) or die("Error in Selecting " . mysqli_error($connection));
+    $result = $connection->query($connection->connect(),$sql)
 
     //create an array
     $emparray = array();
@@ -21,7 +25,7 @@
         $emparray[] = $row;
     }
 
-     echo json_encode($emparray);
+    echo json_encode($emparray);
 
      //write to json file
     $fp = fopen('trucksAddress.json', 'w');
@@ -29,7 +33,7 @@
     fclose($fp);
 
       //close the db connection
-    mysqli_close($connection);
+    $connection->disconnect();
 
     $string = 'window.appMode = "user"';
 
