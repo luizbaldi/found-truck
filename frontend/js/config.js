@@ -1,1 +1,0 @@
-window.appMode = "user";

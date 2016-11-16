@@ -21,7 +21,6 @@
     <script src="js/libs/angular-ui-router.min.js"></script>
     <script src="js/libs/jquery-2.1.1.min.js"></script>
     <script src="js/libs/bootstrap.js"></script>
-    <script src="js/config.js"></script>
     <script src="js/libs/angular-local-storage.min.js"></script>
     <script async defer src="http://maps.googleapis.com/maps/api/js?key=AIzaSyBl_5g_j-pTrsvkwGh0yD7zW39xkw_-cBg"></script>
     <!-- Modules -->
@@ -43,6 +42,10 @@
 
 </head>
 <body ng-app="foundtruck">
+    <script type="text/javascript">
+        window.appMode = "user";
+    </script>
+
     <div ui-view></div>
 </body>
 </html>
