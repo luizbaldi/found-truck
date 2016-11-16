@@ -1,3 +1,5 @@
-foundtruck.controller('UtilitiesController', function() {
-
-});
+foundtruck.controller('UtilitiesController', [function() {
+	this.showCustomAlert = function(message) {
+		alert(message);
+	};
+}]);

@@ -1,10 +1,13 @@
-foundtruck.controller('UserLoginController', ['$scope','UserLoginService', '$state', function($scope, UserLoginService, $state) {
+foundtruck.controller('UserLoginController', ['$scope','UserLoginService', '$state', 'localStorageService', function($scope, UserLoginService, $state, localStorageService) {
 
 	// Test if login data is registered
 	$scope.doLogin = function(user) {
 		UserLoginService.success(function(userData) {
 			var isValidLogin = userData.some(function(user) {
-				return (user.email == this.user.email && user.password == this.user.password);
+				if (user.email == this.user.email && user.password == this.user.password) {
+					localStorageService.set('userSession', JSON.stringify(user));
+					return true;
+				}
 			}.bind(this));
 
 			if (isValidLogin) {
