@@ -5,5 +5,6 @@ foundtruck.controller('FindLocationAlternativeController', ['$scope', '$state', 
 		localStorageService.set('addressTypeFlag', 'alternative');
 		
 		$state.go('loadtrucks');
-	};	
+	};
+
 }]);

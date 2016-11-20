@@ -4,10 +4,6 @@ foundtruck.controller('FindLocationController', ['$scope', '$state', 'localStora
 		$state.go(viewName);
 	};
 
-	$scope.test = function() {
-		alert('test');
-	};
-
 	$scope.findMe = function() {
 		var latitude;
 		var longitude;
@@ -40,9 +36,5 @@ foundtruck.controller('FindLocationController', ['$scope', '$state', 'localStora
 
 	var errorOnLoadAddress = function(location) {
 		console.log(error);
-	};
-
-	$scope.toggleMenu = function() {
-		$("#wrapper").toggleClass("toggled");
 	};
 }]);

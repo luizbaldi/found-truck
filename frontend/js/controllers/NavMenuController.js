@@ -5,4 +5,8 @@ foundtruck.controller('NavMenuController', ['$scope', '$state', 'localStorageSer
 		
 		$state.go('userLogin');
 	}
+
+	$scope.toggleMenu = function() {
+		$("#wrapper").toggleClass("toggled");
+	};
 }]);

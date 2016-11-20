@@ -86,8 +86,4 @@ foundtruck.controller('LoadTrucksController', ['$scope', 'LoadTrucksService', 'l
 		});
 		marker.setMap(map);
 	};
-
-	$scope.toggleMenu = function() {
-		$("#wrapper").toggleClass("toggled");
-	};
 }]);
