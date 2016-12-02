@@ -1,0 +1,7 @@
+FoundTruck myJson URL's:
+
+managerLoginData: https://api.myjson.com/bins/2pn8b
+
+trucksAddress: https://api.myjson.com/bins/5byaj
+
+userData: https://api.myjson.com/bins/2f557

@@ -12,15 +12,22 @@ foundtruck.controller('FindLocationController', ['$scope', '$state', 'localStora
 	        var geolocation = window.navigator.geolocation;
 	        geolocation.getCurrentPosition(successOnLoadAddress, errorOnLoadAddress);
 	    } else {
-	        alert('Geolocalização não suportada em seu navegador.');
+	        swal({
+				title: "Geolocalização não suportada em seu navegador.",
+				text: "",
+				type: "warning"
+			});
 	    }
 	};
 
 	var successOnLoadAddress = function(location) {
-		console.log(location);
         latitude = location.coords.latitude;
         longitude = location.coords.longitude;
-        alert('Sua latitude estimada é: ' + latitude + ' e longitude: ' + longitude);
+        swal({
+			title: 'Sua latitude estimada é: ' + latitude + ' e longitude: ' + longitude,
+			text: "",
+			type: ""
+		});
 
         var geocodedAddress = {
         	lat: location.coords.latitude, 

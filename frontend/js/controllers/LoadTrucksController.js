@@ -40,7 +40,11 @@ foundtruck.controller('LoadTrucksController', ['$scope', 'LoadTrucksService', 'l
 
 				createMap(geocodedLocation, trucksAddress);
 			} else {
-				alert('Não foi possível encontrar o endereço');
+				swal({
+					title: 'Não foi possível encontrar o endereço',
+					text: "",
+					type: "error"
+				});
 				$state.go('findlocationalternative');
 			}
 		}); 

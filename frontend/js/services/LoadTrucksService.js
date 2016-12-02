@@ -1,5 +1,5 @@
 foundtruck.factory('LoadTrucksService', function($http) {
-	var httpRequest = $http.get('json/trucksAddress.json')
+	var httpRequest = $http.get('https://api.myjson.com/bins/5byaj')
 		.success(function(data) {
 			return data;
 		})

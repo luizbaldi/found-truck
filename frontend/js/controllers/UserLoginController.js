@@ -11,10 +11,18 @@ foundtruck.controller('UserLoginController', ['$scope','UserLoginService', '$sta
 			}.bind(this));
 
 			if (isValidLogin) {
-				alert('Login is valid');
+				swal({
+					title: 'Bem vindo!',
+					text: "",
+					type: "success"
+				});
 				$state.go('findlocation');
 			} else {
-				alert('Email or password is not valid');
+				swal({
+					title: 'Dados incorretos, por favor preencha novamente',
+					text: "",
+					type: "error"
+				});
 			}
 		}.bind(this));
 	};
