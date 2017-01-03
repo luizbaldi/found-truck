@@ -436,3 +436,7 @@ input:checked + .slider:before {
     .mobile{margin-top: 31%;}
 
 }
+
+#googleMap * {
+    overflow:visible;
+}

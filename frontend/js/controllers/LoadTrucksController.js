@@ -1,4 +1,4 @@
-foundtruck.controller('LoadTrucksController', ['$scope', 'LoadTrucksService', 'localStorageService', '$state', function($scope, LoadTrucksService, localStorageService, $state) {
+foundtruck.controller('LoadTrucksController', ['$scope', 'LoadTrucksService', 'localStorageService', '$state', '$timeout', function($scope, LoadTrucksService, localStorageService, $state, $timeout) {
 	$scope.loadMap = function() {
 		var addressTypeFlag = localStorageService.get('addressTypeFlag');
 
@@ -51,17 +51,22 @@ foundtruck.controller('LoadTrucksController', ['$scope', 'LoadTrucksService', 'l
 	};
 
 	var createMap = function(geocodedLocation, trucksAddress) {
+		var mapCenter = new google.maps.LatLng(geocodedLocation.lat, geocodedLocation.lng);
+		
 		// Create mapobtions object to define properties
 		var mapOptions = {
-			zoom: 14,
-			center: geocodedLocation
+			zoom: 16,
+			center: mapCenter,
+			streetViewControl: false,
+			mapTypeControl: false,
+			disableDoubleClickZoom: true
 		};
 
 		// Create the map
 		map = new google.maps.Map(document.getElementById('googleMap'), mapOptions);
 
 		// Create an marker for user current location
-		createMarker(map, new google.maps.LatLng(geocodedLocation.lat, geocodedLocation.lng), 'Seu endereço', 'user');
+		createMarker(map, mapCenter, 'Seu endereço', 'user');
 
 		// Loop through trucks and add them into the map
 		for (var i = 0; i < trucksAddress.length; i++) {
@@ -71,6 +76,8 @@ foundtruck.controller('LoadTrucksController', ['$scope', 'LoadTrucksService', 'l
 			// Adding a new marker for the object
 			createMarker(map, new google.maps.LatLng(currentAddress.latitude, currentAddress.longitude), currentAddress.title, 'truck');
 		}
+
+		var geoLocationControl = new klokantech.GeolocationControl(map, 16);
 	};
 
 	var createMarker = function(map, point, title, markerType) {
