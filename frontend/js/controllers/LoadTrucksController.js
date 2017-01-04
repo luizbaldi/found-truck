@@ -7,7 +7,7 @@ foundtruck.controller('LoadTrucksController', ['$scope', 'LoadTrucksService', 'l
 
 			/* If address was created on findme button it goes directly to create map function */
 			LoadTrucksService.success(function(trucksAddress) {
-				createMap(geocodedAddress, trucksAddress, true);
+				createMap(geocodedAddress, trucksAddress);
 			});
 		} else if (addressTypeFlag == 'alternative') {
 			var userLocation = JSON.parse(localStorageService.get('address'));
@@ -38,7 +38,7 @@ foundtruck.controller('LoadTrucksController', ['$scope', 'LoadTrucksService', 'l
 					lng: results[0].geometry.location.lng()
 				};
 
-				createMap(geocodedLocation, trucksAddress, true);
+				createMap(geocodedLocation, trucksAddress);
 			} else {
 				swal({
 					title: 'Não foi possível encontrar o endereço',
@@ -50,7 +50,7 @@ foundtruck.controller('LoadTrucksController', ['$scope', 'LoadTrucksService', 'l
 		}); 
 	};
 
-	var createMap = function(geocodedLocation, trucksAddress, isSimulation) {
+	var createMap = function(geocodedLocation, trucksAddress) {
 		var mapCenter = new google.maps.LatLng(geocodedLocation.lat, geocodedLocation.lng);
 		
 		// Create mapobtions object to define properties
@@ -68,7 +68,9 @@ foundtruck.controller('LoadTrucksController', ['$scope', 'LoadTrucksService', 'l
 		// Create an marker for user current location
 		createMarker(map, mapCenter, 'Seu endereço', 'user');
 
-		if (isSimulation == true) {
+		var isSimulation = JSON.parse(localStorageService.get('userSession')).isSimulation;
+
+		if (isSimulation) {
 			for (var i = 0; i <= 4; i++) {
 				var randomLat = geocodedLocation.lat + UtilService.getRandomNumber(-0.02, 0.02);
 				var randomLng = geocodedLocation.lng + UtilService.getRandomNumber(-0.02, 0.02);
