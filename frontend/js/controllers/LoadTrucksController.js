@@ -1,4 +1,4 @@
-foundtruck.controller('LoadTrucksController', ['$scope', 'LoadTrucksService', 'localStorageService', '$state', '$timeout', function($scope, LoadTrucksService, localStorageService, $state, $timeout) {
+foundtruck.controller('LoadTrucksController', ['$scope', 'LoadTrucksService', 'localStorageService', '$state', 'UtilService', function($scope, LoadTrucksService, localStorageService, $state, UtilService) {
 	$scope.loadMap = function() {
 		var addressTypeFlag = localStorageService.get('addressTypeFlag');
 
@@ -7,7 +7,7 @@ foundtruck.controller('LoadTrucksController', ['$scope', 'LoadTrucksService', 'l
 
 			/* If address was created on findme button it goes directly to create map function */
 			LoadTrucksService.success(function(trucksAddress) {
-				createMap(geocodedAddress, trucksAddress);
+				createMap(geocodedAddress, trucksAddress, true);
 			});
 		} else if (addressTypeFlag == 'alternative') {
 			var userLocation = JSON.parse(localStorageService.get('address'));
@@ -38,7 +38,7 @@ foundtruck.controller('LoadTrucksController', ['$scope', 'LoadTrucksService', 'l
 					lng: results[0].geometry.location.lng()
 				};
 
-				createMap(geocodedLocation, trucksAddress);
+				createMap(geocodedLocation, trucksAddress, true);
 			} else {
 				swal({
 					title: 'Não foi possível encontrar o endereço',
@@ -50,12 +50,12 @@ foundtruck.controller('LoadTrucksController', ['$scope', 'LoadTrucksService', 'l
 		}); 
 	};
 
-	var createMap = function(geocodedLocation, trucksAddress) {
+	var createMap = function(geocodedLocation, trucksAddress, isSimulation) {
 		var mapCenter = new google.maps.LatLng(geocodedLocation.lat, geocodedLocation.lng);
 		
 		// Create mapobtions object to define properties
 		var mapOptions = {
-			zoom: 16,
+			zoom: 14,
 			center: mapCenter,
 			streetViewControl: false,
 			mapTypeControl: false,
@@ -68,13 +68,23 @@ foundtruck.controller('LoadTrucksController', ['$scope', 'LoadTrucksService', 'l
 		// Create an marker for user current location
 		createMarker(map, mapCenter, 'Seu endereço', 'user');
 
-		// Loop through trucks and add them into the map
-		for (var i = 0; i < trucksAddress.length; i++) {
-			// Current object
-			var currentAddress = trucksAddress[i];
+		if (isSimulation == true) {
+			for (var i = 0; i <= 4; i++) {
+				var randomLat = geocodedLocation.lat + UtilService.getRandomNumber(-0.02, 0.02);
+				var randomLng = geocodedLocation.lng + UtilService.getRandomNumber(-0.02, 0.02);
+				
+				// Adding a new marker for the object
+				createMarker(map, new google.maps.LatLng(randomLat, randomLng), 'Truck Simulado', 'truck');
+			}
+		} else {
+			// Loop through trucks and add them into the map
+			for (var i = 0; i < trucksAddress.length; i++) {
+				// Current object
+				var currentAddress = trucksAddress[i];
 
-			// Adding a new marker for the object
-			createMarker(map, new google.maps.LatLng(currentAddress.latitude, currentAddress.longitude), currentAddress.title, 'truck');
+				// Adding a new marker for the object
+				createMarker(map, new google.maps.LatLng(currentAddress.latitude, currentAddress.longitude), currentAddress.title, 'truck');
+			}
 		}
 
 		var geoLocationControl = new klokantech.GeolocationControl(map, 16);
