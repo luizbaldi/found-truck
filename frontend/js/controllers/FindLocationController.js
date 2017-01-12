@@ -1,6 +1,6 @@
 foundtruck.controller('FindLocationController', ['$scope', '$state', 'localStorageService',  function($scope, $state, localStorageService) {
 
-	$scope.changeView = function(viewName) {
+	$scope.openWindow = function(viewName) {
 		$state.go(viewName);
 	};
 
@@ -10,7 +10,7 @@ foundtruck.controller('FindLocationController', ['$scope', '$state', 'localStora
 
 	    if (window.navigator && window.navigator.geolocation) {
 	        var geolocation = window.navigator.geolocation;
-	        geolocation.getCurrentPosition(successOnLoadAddress, errorOnLoadAddress);
+	        geolocation.getCurrentPosition(_successOnLoadAddress, _errorOnLoadAddress);
 	    } else {
 	        swal({
 				title: "Geolocalização não suportada em seu navegador.",
@@ -20,14 +20,9 @@ foundtruck.controller('FindLocationController', ['$scope', '$state', 'localStora
 	    }
 	};
 
-	var successOnLoadAddress = function(location) {
+	var _successOnLoadAddress = function(location) {
         latitude = location.coords.latitude;
         longitude = location.coords.longitude;
-        swal({
-			title: 'Sua latitude estimada é: ' + latitude + ' e longitude: ' + longitude,
-			text: "",
-			type: ""
-		});
 
         var geocodedAddress = {
         	lat: location.coords.latitude, 
@@ -41,7 +36,7 @@ foundtruck.controller('FindLocationController', ['$scope', '$state', 'localStora
 		$state.go('loadtrucks');
 	};
 
-	var errorOnLoadAddress = function(location) {
+	var _errorOnLoadAddress = function(location) {
 		console.log(error);
 	};
 }]);

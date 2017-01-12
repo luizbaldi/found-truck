@@ -2,32 +2,37 @@ foundtruck.controller('UserLoginController', ['$scope','UserLoginService', '$sta
 
 	// Test if login data is registered
 	$scope.doLogin = function(user) {
-		var isSimulation = user.isSimulation;
+		if (user != 'anon') {
+			var isSimulation = user.isSimulation;
 
-		UserLoginService.success(function(userData) {
-			var isValidLogin = userData.some(function(user) {
-				if (user.email == this.user.email && user.password == this.user.password) {
-					user.isSimulation = isSimulation;
-					localStorageService.set('userSession', JSON.stringify(user));
-					return true;
+			UserLoginService.success(function(userData) {
+				var isValidLogin = userData.some(function(user) {
+					if (user.email == this.user.email && user.password == this.user.password) {
+						user.isSimulation = isSimulation;
+						localStorageService.set('userSession', JSON.stringify(user));
+						return true;
+					}
+				}.bind(this));
+
+				if (isValidLogin) {
+					swal({
+						title: 'Bem vindo!',
+						text: "",
+						type: "success"
+					});
+					$state.go('findlocation');
+				} else {
+					swal({
+						title: 'Dados incorretos, por favor preencha novamente',
+						text: "",
+						type: "error"
+					});
 				}
 			}.bind(this));
-
-			if (isValidLogin) {
-				swal({
-					title: 'Bem vindo!',
-					text: "",
-					type: "success"
-				});
-				$state.go('findlocation');
-			} else {
-				swal({
-					title: 'Dados incorretos, por favor preencha novamente',
-					text: "",
-					type: "error"
-				});
-			}
-		}.bind(this));
+		} else {
+			localStorageService.set('userSession', 'anon');
+			$state.go('findlocation');
+		}
 	};
 
 	$scope.openWindow = function(windowName) {

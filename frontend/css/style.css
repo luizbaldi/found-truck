@@ -450,3 +450,15 @@ input:checked + .slider:before {
     width: 15px;
     margin-top: 6px;
 }
+
+.menu-header {
+    font-family: "Oswald";
+    text-indent: 20px;
+    margin-top: 15px;
+    color: white;
+    font-size: 1.2em;
+}
+
+.menu-header label {
+    font-weight: normal;
+}

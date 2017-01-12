@@ -1,11 +1,15 @@
-<div id="wrapper">
+<div id="wrapper" ng-init="checkUserSession()">
     <!-- Parte Lateral -->
     <div id="sidebar-wrapper">
         <ul class="sidebar-nav">
+        <p class="menu-header">Olá, <label ng-bind="name"></label></p>
+
+            <hr />
+
             <li>
                 <span>CONTA</span>
 
-                <a>Editar Dados</a>
+                <a ng-hide="isAnon">Editar Dados</a>
             </li>
             <li>
                 <a ng-click="logoff()">Sair</a>
