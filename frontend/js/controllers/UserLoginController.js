@@ -1,14 +1,11 @@
 foundtruck.controller('UserLoginController', ['$scope','UserLoginService', '$state', 'localStorageService', function($scope, UserLoginService, $state, localStorageService) {
 
 	// Test if login data is registered
-	$scope.doLogin = function(user) {
+	$scope.doLogin = function(user, simulation) {
 		if (user != 'anon') {
-			var isSimulation = user.isSimulation;
-
 			UserLoginService.success(function(userData) {
 				var isValidLogin = userData.some(function(user) {
 					if (user.email == this.user.email && user.password == this.user.password) {
-						user.isSimulation = isSimulation;
 						localStorageService.set('userSession', JSON.stringify(user));
 						return true;
 					}
@@ -33,6 +30,7 @@ foundtruck.controller('UserLoginController', ['$scope','UserLoginService', '$sta
 			localStorageService.set('userSession', 'anon');
 			$state.go('findlocation');
 		}
+		localStorageService.set('simulation', simulation);
 	};
 
 	$scope.openWindow = function(windowName) {

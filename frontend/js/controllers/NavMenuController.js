@@ -1,16 +1,5 @@
-foundtruck.controller('NavMenuController', ['$scope', '$state', 'localStorageService', function($scope, $state, localStorageService) {
-
-	$scope.logoff = function() {
-		// Clear user session data before redirect
-		localStorageService.remove('userSession');
-		
-		$state.go('userLogin');
-	}
-
-	$scope.toggleMenu = function() {
-		$("#wrapper").toggleClass("toggled");
-	};
-
+foundtruck.controller('NavMenuController', ['$scope','localStorageService', '$state', '$uibModalInstance', function($scope, localStorageService, $state, $uibModalInstance) {
+	
 	$scope.checkUserSession = function() {
 		var userSession = localStorageService.get('userSession');
 
@@ -25,4 +14,13 @@ foundtruck.controller('NavMenuController', ['$scope', '$state', 'localStorageSer
 			$scope.name = userData.personalData[0].name;
 		}
 	};
+
+	$scope.logoff = function() {
+		// Clear user session data before redirect
+		localStorageService.remove('userSession');
+		// Closes the side menu instance
+		$uibModalInstance.close();
+		
+		$state.go('userLogin');
+	}
 }]);

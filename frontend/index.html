@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="foundtruck">
 
 <head>
     <title>FOUNDTRUCK</title>
@@ -16,14 +16,17 @@
     <link rel="stylesheet" href="css/font-awesome.min.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/sweetalert.css">
+    <link rel="stylesheet" href="css/angular-aside.min.css">
     
     <!-- JavaScript Files -->
+    <script src="js/libs/jquery-2.1.1.min.js"></script>
     <script src="js/libs/angular.min.js"></script>
     <script src="js/libs/angular-ui-router.min.js"></script>
-    <script src="js/libs/jquery-2.1.1.min.js"></script>
+    <script src="js/libs/ui-bootstrap-tpls-2.3.0.min.js"></script>
     <script src="js/libs/bootstrap.js"></script>
     <script src="js/libs/angular-local-storage.min.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBl_5g_j-pTrsvkwGh0yD7zW39xkw_-cBg"></script>
+    <script src="js/libs/angular-aside.min.js"></script>
     <script src="js/libs/sweetalert.min.js"></script>
     <script src="https://cdn.klokantech.com/maptilerlayer/v1/index.js"></script>
 
@@ -41,14 +44,14 @@
     <script src="js/controllers/FindLocationAlternativeController.js"></script>
     <script src="js/controllers/ManagerLoginController.js"></script>
     <script src="js/controllers/LoadTrucksController.js"></script>
+    <script src="js/controllers/HeaderController.js"></script>
     <script src="js/controllers/NavMenuController.js"></script>
     
     <!-- Directives -->
-    <script src="js/directives/NavMenuDirective.js"></script>
-    <script src="js/directives/NavLogoDirective.js"></script>
+    <script src="js/directives/HeaderFoundtruck.js"></script>
 
 </head>
-<body ng-app="foundtruck">
+<body>
     <script type="text/javascript">
         window.appMode = "user";
     </script>

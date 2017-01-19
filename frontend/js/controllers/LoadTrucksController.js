@@ -68,9 +68,9 @@ foundtruck.controller('LoadTrucksController', ['$scope', 'LoadTrucksService', 'l
 		// Create an marker for user current location
 		createMarker(map, mapCenter, 'Seu endereço', 'user');
 
-		var isSimulation = JSON.parse(localStorageService.get('userSession')).isSimulation;
+		var simulation = localStorageService.get('simulation');
 
-		if (isSimulation) {
+		if (simulation) {
 			for (var i = 0; i <= 4; i++) {
 				var randomLat = geocodedLocation.lat + UtilService.getRandomNumber(-0.02, 0.02);
 				var randomLng = geocodedLocation.lng + UtilService.getRandomNumber(-0.02, 0.02);

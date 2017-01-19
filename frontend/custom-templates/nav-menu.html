@@ -1,0 +1,17 @@
+<div class="side-menu" ng-init="checkUserSession()">
+    <div class="modal-header text-center">
+        <p class="menu-header">Olá, <label ng-bind="name"></label></p>
+    </div>
+    <div class="modal-body">
+        <ul class="list-group">
+            <button type="button" class="side-menu-button list-group-item" ng-hide="isAnon">
+                <span class=" side-menu-iconglyphicon glyphicon-pencil pull-right"></span>
+                <span class="side-menu-label pull-left">Editar dados</span>
+            </button>
+            <button ng-click="logoff()" type="button" class="side-menu-button list-group-item">
+                <span class="side-menu-icon glyphicon glyphicon-off pull-right"></span>
+                <span class="side-menu-label pull-left">Sair</span>
+            </button>
+        </ul>
+    </div>
+</div>

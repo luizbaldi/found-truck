@@ -1,4 +1,4 @@
-var foundtruck = angular.module('foundtruck', ['ui.router', 'LocalStorageModule']);
+var foundtruck = angular.module('foundtruck', ['ui.router', 'LocalStorageModule', 'ui.bootstrap', 'ngAside']);
 
 foundtruck.config(function($stateProvider, $urlRouterProvider) {
 	$urlRouterProvider.otherwise('/');
