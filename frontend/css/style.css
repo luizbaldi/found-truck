@@ -297,17 +297,21 @@ input:checked + .slider:before {
     background-color: #F57C00
 }
 
-.footer .left-action {
-	width: 25%;
+.footer .action {
 	height: 100%;
 	text-align: center;
-    font-size: 1.2em;
+    padding: 0 30px;
+    font-family:'Oswald';
+    font-size: 1.5em;
 }
 
-.footer .left-action:hover {
+.footer .action:hover {
 	background-color: #ffaf39;
 }
 
+.footer .action span {
+	padding-right: 10px;
+}
 /* Side Menu */
 .side-menu .modal-header {
     width: 250px;

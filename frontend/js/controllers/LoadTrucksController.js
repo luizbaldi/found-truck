@@ -1,4 +1,4 @@
-foundtruck.controller('LoadTrucksController', ['$scope', 'LoadTrucksService', 'localStorageService', '$state', 'UtilService', function($scope, LoadTrucksService, localStorageService, $state, UtilService) {
+foundtruck.controller('LoadTrucksController', ['$scope', 'LoadTrucksService', 'localStorageService', '$state', 'UtilService', '$uibModal', function($scope, LoadTrucksService, localStorageService, $state, UtilService, $uibModal) {
 	$scope.loadMap = function() {
 		var addressTypeFlag = localStorageService.get('addressTypeFlag');
 
@@ -66,7 +66,7 @@ foundtruck.controller('LoadTrucksController', ['$scope', 'LoadTrucksService', 'l
 		map = new google.maps.Map(document.getElementById('googleMap'), mapOptions);
 
 		// Create an marker for user current location
-		createMarker(map, mapCenter, 'Seu endereço', 'user');
+		createMarker(map, mapCenter, 'Seu endereço', 0);
 
 		var simulation = localStorageService.get('simulation');
 
@@ -76,7 +76,8 @@ foundtruck.controller('LoadTrucksController', ['$scope', 'LoadTrucksService', 'l
 				var randomLng = geocodedLocation.lng + UtilService.getRandomNumber(-0.02, 0.02);
 				
 				// Adding a new marker for the object
-				createMarker(map, new google.maps.LatLng(randomLat, randomLng), 'Truck Simulado', 'truck');
+				var truckType = Math.floor(Math.random() * (5 - 1) + 1) + 1;
+				createMarker(map, new google.maps.LatLng(randomLat, randomLng), 'Truck Simulado', truckType);
 			}
 		} else {
 			// Loop through trucks and add them into the map
@@ -94,11 +95,35 @@ foundtruck.controller('LoadTrucksController', ['$scope', 'LoadTrucksService', 'l
 
 	var createMarker = function(map, point, title, markerType) {
 		var iconPath;
-
-		if (markerType == "user") {
-			iconPath = "img/user_ico_maps.png"; 
-		} else {
-			iconPath = "img/truck_ico_maps.png";
+		/* Trucks subtitle
+		1 - Chinese (black)
+		2 - Regional food (blue)
+		3 - Vegan (green)	
+		4 - Pasta (light-blue)
+		5 - Hot-dog (red)
+		*/
+		switch (markerType) {
+			case 0:
+				iconPath = "img/markers/purple.png";
+				break;
+			case 1:
+				iconPath = "img/markers/black.png";
+				break;
+			case 2:
+				iconPath = "img/markers/blue.png";
+				break;
+			case 3:
+				iconPath = "img/markers/vegan.png";
+				break;
+			case 4:
+				iconPath = "img/markers/light-blue.png";
+				break;
+			case 5:
+				iconPath = "img/markers/red.png";
+				break;
+			default:
+				iconPath = "img/markers/orange.png";
+				break;
 		}
 
 		var marker = new google.maps.Marker({
@@ -108,5 +133,13 @@ foundtruck.controller('LoadTrucksController', ['$scope', 'LoadTrucksService', 'l
 			icon: iconPath
 		});
 		marker.setMap(map);
+	};
+
+	$scope.openSubtitle = function() {
+		$uibModal.open({
+			templateUrl: 'custom-templates/markers-subtitle.html',
+			controller: 'ModalController',
+			size: 'lg'
+	    });
 	};
 }]);
