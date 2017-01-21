@@ -9,3 +9,4 @@ https://luizbaldi.github.io/found-truck/frontend
 ##Contributors
 ###Luiz Baldi
 ###Leonardo Pego
+###Luis Philipe Fidelis
