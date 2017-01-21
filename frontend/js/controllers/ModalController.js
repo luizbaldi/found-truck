@@ -1,5 +1,6 @@
 foundtruck.controller('ModalController', ['$scope', function($scope) {
 	$scope.subtitleList = [
+		'Roxo - Sua Localização',
 		'Preto - Comida Chinesa',
 		'Azul - Comida Regional',
 		'Verde - Comida Vegana',

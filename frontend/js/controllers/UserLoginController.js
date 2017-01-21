@@ -1,9 +1,9 @@
-foundtruck.controller('UserLoginController', ['$scope','UserLoginService', '$state', 'localStorageService', function($scope, UserLoginService, $state, localStorageService) {
+foundtruck.controller('UserLoginController', ['$scope','UserService', '$state', 'localStorageService', function($scope, UserService, $state, localStorageService) {
 
 	// Test if login data is registered
 	$scope.doLogin = function(user, simulation) {
 		if (user != 'anon') {
-			UserLoginService.doLogin(user)
+			UserService.doLogin(user)
 			.success(function(response) {
 				if(response.error) {
 					swal({
@@ -17,6 +17,7 @@ foundtruck.controller('UserLoginController', ['$scope','UserLoginService', '$sta
 						text: "",
 						type: "success"
 					});
+					localStorageService.set('userSession', JSON.stringify(user));
 					$state.go('findlocation');
 				}
 			})

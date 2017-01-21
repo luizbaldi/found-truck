@@ -320,7 +320,7 @@ input:checked + .slider:before {
 .side-menu-button, .side-menu-button:focus {
   color: white !important;
   background-color: #ff9800 !important;
-  border-color: #ff9800;
+  border-color: #d88100;
 }
 
 .side-menu-label,.side-menu-label:focus {
@@ -370,4 +370,8 @@ input:checked + .slider:before {
 
 .menu-header label {
     font-weight: normal;
+}
+
+.form-signin button {
+	margin-top: 30px;
 }

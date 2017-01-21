@@ -1,0 +1,24 @@
+<div ui-view>
+    <header-foundtruck></header-foundtruck>
+
+    <div class="text-center container col-xs-10 col-xs-offset-1 col-md-offset-3 col-md-6 content">
+        <form class="form-signin" ng-submit="register(user)">
+            <label class="input-text text-email">Nome</label>
+            <input type="text" class="text-box form-control" ng-model="user.name" placeholder="Digite seu nome">
+            <label class="input-text text-email">E-mail</label>
+            <input type="email" class="text-box form-control" ng-model="user.email" placeholder="Digite seu e-mail">
+            <label class="input-text">Senha</label>
+            <input type="password" class="text-box form-control" ng-model="user.password" placeholder="Digite sua senha">
+            <label class="input-text">Confirme sua senha</label>
+            <input type="password" class="text-box form-control" ng-model="user.checkPassword" placeholder="Confirme sua senha">
+            <button type="submit" class="button btn btn-danger btn-block">Cadastrar</button>
+        </form>
+    </div>
+
+    <div class="footer">
+        <div class="action pull-left" ng-click="goBack()">
+            <i class="fa fa-angle-left"></i>
+            <span>Voltar</span>
+        </div>
+    </div>
+</div>

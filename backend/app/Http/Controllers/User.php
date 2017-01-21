@@ -115,6 +115,7 @@ class User extends Controller {
 
 		try{
 			$userData = $request->all();
+			var_dump($userData); die;
 			$userMail = $userData['login'];
 			$userPassword = $userData['password'];
 

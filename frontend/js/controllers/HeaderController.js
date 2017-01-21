@@ -7,5 +7,14 @@ foundtruck.controller('HeaderController', ['$scope', '$state', 'localStorageServ
 			placement: 'left',
 			size: 'lg'
 	    });
-	}
+	};
+
+	$scope.showSideMenu = function() {
+		var userSession = localStorageService.get('userSession');
+		if (userSession) {
+			return true;
+		} else {
+			return false;
+		}
+	};
 }]);

@@ -8,7 +8,7 @@ foundtruck.config(function($stateProvider, $urlRouterProvider) {
             .state('userLogin', {
                 url: '/',
                 controller: 'UserLoginController',
-                templateUrl: 'views/user/login.html'
+                templateUrl: 'views/user/user-login.html'
             })
             .state('findlocation', {
             	url: '/findlocation',
@@ -24,6 +24,11 @@ foundtruck.config(function($stateProvider, $urlRouterProvider) {
                 url: '/loadtrucks',
                 controller: 'LoadTrucksController',
                 templateUrl: 'views/user/loadtrucks.html' 
+            })
+            .state('userRegister', {
+                url: '/userRegister',
+                controller: 'UserRegisterController',
+                templateUrl: 'views/user/user-register.html' 
             });
     } else if (window.appMode == "manager") {
         $stateProvider

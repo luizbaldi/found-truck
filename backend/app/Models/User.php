@@ -15,6 +15,6 @@ class User extends Eloquent
 	protected $collection = 'user';
 	protected $connection = 'mongodb';
 
-	protected $fillable = ['email','password','personalData', 'trucks'];
+	protected $fillable = ['email', 'password', 'personalData', 'trucks'];
 	
 }

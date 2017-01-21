@@ -4,4 +4,8 @@ foundtruck.service('UtilService', function() {
 		return Math.random() * (max - min) + min;
 	}
 
+	this.isEmpty = function(value) {
+	    return (value === undefined || value == null || value.length <= 0 || value == "") ? true : false;
+	}
+
 });
