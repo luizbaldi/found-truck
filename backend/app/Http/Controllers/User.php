@@ -57,6 +57,27 @@ class User extends Controller {
 		return $response;
 	}
 
+	 public function delete(Request $request){
+        $responseContent = array();
+        try {
+            $user = $request->all();
+            if(!empty($user)){
+                $userId    = $user['_id'];
+                $this->userService->delete($userId);
+                $responseContent['error']   = false;
+                $responseContent['message'] = 'Truck has been removed.';
+            }else{
+                $responseContent['error']   = true;
+                $responseContent['message'] = 'Any data sent.';
+            }
+        } catch(\Exception $e) {
+            $responseContent['error']   = true;
+            $responseContent['message'] = $e->getMessage();
+        }
+        $response = new Response($responseContent);
+        return $response;
+    }
+
 	public function edit(Request $request){
 		$responseContent = array();
 		try{

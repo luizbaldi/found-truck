@@ -1,11 +1,20 @@
 foundtruck.factory('UserLoginService', function($http) {
-	var httpRequest = $http.get('https://api.myjson.com/bins/2f557')
-		.success(function(data) {
-			return data;
+	this.doLogin = function(userData){
+		httpRequest = $http(
+			{
+				method  : 'POST',
+	        	url     : '../backend/public/index.php/user/login',
+	       		data    :  JSON.stringify(userData),  
+	       		dataType: 'json'
+  	    	}
+  	    )
+  	    .success(function(data) {
+		 	return data;
 		})
 		.error(function(error) {
-			return error;
+		 	return error;
 		});
-
-	return httpRequest;
+		
+  	    return httpRequest;
+	}
 });

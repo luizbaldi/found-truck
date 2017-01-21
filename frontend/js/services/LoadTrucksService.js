@@ -1,11 +1,15 @@
 foundtruck.factory('LoadTrucksService', function($http) {
-	var httpRequest = $http.get('https://api.myjson.com/bins/5byaj')
-		.success(function(data) {
-			return data;
-		})
-		.error(function(error) {
-			return error;
-		});
-
-	return httpRequest;
+	var requestData = {};
+	var httpRequest = $http({method  : 'POST',
+        url     : '../backend/public/index.php/truck/getAll',
+        data    :  JSON.stringify(requestData),  
+        dataType: 'json'
+    })
+    .success(function(data) {
+	 	return data;
+	})
+	.error(function(error) {
+	 	return error;
+	});
+	return httpRequest;	
 });
