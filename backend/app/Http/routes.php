@@ -11,7 +11,7 @@
 |
 */
 // -- Truck routes
-Route::group(array('prefix' => 'truck'), function()
+Route::group(array('prefix' => '/truck'), function()
 {
 	Route::get('/getAll', 'FoodTruck@getAll');
 	Route::post('/getAll', 'FoodTruck@getAll');
@@ -21,7 +21,7 @@ Route::group(array('prefix' => 'truck'), function()
 });
 // -- user routes
 Route::post('/login', 'User@login');
-Route::group(array('prefix' => 'user'), function()
+Route::group(array('prefix' => '/user'), function()
 {
 	Route::post('/create', 'User@create');
 	Route::post('/edit', 'User@edit');

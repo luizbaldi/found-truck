@@ -7,14 +7,14 @@ use Illuminate\Http\Response;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use App\Http\Services\FoodTruck;
+use App\Http\Services\FoodTruck as FoodTruckService;
 
 class FoodTruck extends Controller {	
 	
     protected $foodTruckService;
 
-	public function __construct(FoodTruck $foodTruckService){
-		$this->$foodTruckService = $foodTruckService;
+	public function __construct(FoodTruckService $foodTruckService){
+		$this->foodTruckService = $foodTruckService;
 	}
     
     public function create(Request $request){
@@ -83,7 +83,7 @@ class FoodTruck extends Controller {
         return $response;
     }
 
-    public function edit(Request){
+    public function edit(Request $request){
         $responseContent = array();
         try {
             $truck = $request->all();
