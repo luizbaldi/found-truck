@@ -375,3 +375,12 @@ input:checked + .slider:before {
 .form-signin button {
 	margin-top: 30px;
 }
+
+.subtitle-box {
+	width: 20px;
+	height: 20px;
+	margin: 5px;
+	border: 1px solid rgba(0, 0, 0, .2);
+    display: inline-block;
+    float: left;
+}
