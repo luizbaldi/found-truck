@@ -7,7 +7,10 @@
     </div>
     <div class="modal-body">
         <ul class="list-group text-center">
-            <li class="list-group-item" ng-repeat="item in subtitleList" ng-bind="item"></li>
+            <li class="list-group-item" ng-repeat="item in subtitleList">
+                <div class="subtitle-box" style="background-color: {{item.color}}"></div>
+                <span ng-bind="item.description"></span>
+            </li>
         </ul>
     </div>
 </div>

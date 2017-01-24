@@ -1,10 +1,36 @@
 foundtruck.controller('ModalController', ['$scope', function($scope) {
+	/* Subtitle
+	'Roxo - Sua Localização',
+	'Preto - Comida Chinesa',
+	'Azul - Comida Regional',
+	'Verde - Comida Vegana',
+	'Azul Claro - Massas',
+	'Vermelho - Cachorro Quente'
+	*/
 	$scope.subtitleList = [
-		'Roxo - Sua Localização',
-		'Preto - Comida Chinesa',
-		'Azul - Comida Regional',
-		'Verde - Comida Vegana',
-		'Azul Claro - Massas',
-		'Vermelho - Cachorro Quente'
+		{
+			color: '#f58634',
+			description: 'Sua Localização'
+		},
+		{
+			color: '#373435',
+			description: 'Comida Oriental'
+		},
+		{
+			color: '#3e4095',
+			description: 'Comida Regional'
+		},
+		{
+			color: '#ed3192',
+			description: 'Doces'
+		},
+		{
+			color: '#ffd26f',
+			description: 'Massas Geral'
+		},
+		{
+			color: '#ed3237',
+			description: 'Cachorro Quente'
+		}
 	];
 }]);
