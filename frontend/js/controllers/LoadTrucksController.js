@@ -6,14 +6,32 @@ foundtruck.controller('LoadTrucksController', ['$scope', 'LoadTrucksService', 'l
 			var geocodedAddress = JSON.parse(localStorageService.get('geocodedAddress'));
 
 			/* If address was created on findme button it goes directly to create map function */
-			LoadTrucksService.success(function(trucksAddress) {
-				createMap(geocodedAddress, trucksAddress);
+			LoadTrucksService.success(function(response) {
+				if(response['error']){
+					swal({
+						title: 'Não foi possível carregar os food trucks.',
+						text: "",
+						type: "error"
+					});
+				}else{
+					var trucksAddress =  response['data'];
+					createMap(geocodedAddress, trucksAddress);
+				}
 			});
 		} else if (addressTypeFlag == 'alternative') {
 			var userLocation = JSON.parse(localStorageService.get('address'));
 			
 			LoadTrucksService.success(function(trucksAddress) {
-				geocodeUserLocation(userLocation, trucksAddress);
+				if(response['error']){
+					swal({
+						title: 'Não foi possível carregar os food trucks.',
+						text: "",
+						type: "error"
+					});
+				}else{
+					var trucksAddress =  response['data'];
+					geocodeUserLocation(userLocation, trucksAddress);
+				}
 			});
 		}
 	};

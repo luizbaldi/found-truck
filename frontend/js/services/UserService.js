@@ -3,7 +3,7 @@ foundtruck.service('UserService', function($http) {
 		var httpRequest = $http(
 			{
 				method  : 'POST',
-	        	url     : '../backend/public/index.php/user/login',
+	        	url     : '../backend/public/index.php/login',
 	       		data    :  JSON.stringify(userData),  
 	       		dataType: 'json'
   	    	}
@@ -22,7 +22,7 @@ foundtruck.service('UserService', function($http) {
 		var httpRequest = $http(
 			{
 				method  : 'POST',
-	        	url     : '../backend/public/index.php/user/register',
+	        	url     : '../backend/public/index.php/user/create',
 	       		data    :  JSON.stringify(userData),  
 	       		dataType: 'json'
   	    	}
