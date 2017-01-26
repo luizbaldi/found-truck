@@ -1,30 +1,17 @@
-foundtruck.controller('UserRegisterController', ['$scope', 'UtilService', 'UserService', function($scope, UtilService, UserService) {
+foundtruck.controller('UserRegisterController', ['$scope', 'UtilService', 'localStorageService', '$state', function($scope, UtilService, localStorageService, $state) {
 	
 	$scope.goBack = function() {
 		window.history.back();
 	};
 
 	$scope.register = function(user) {
-		if (_validateUserData(user)) {
-			UserService.register(user)
-			.success(function(response) {
-				if(response.error) {
-					swal({
-						title: 'Dados incorretos, por favor preencha novamente',
-						text: "",
-						type: "error"
-					});
-				} else {
-					swal({
-						title: 'Dados cadastrados com sucesso!',
-						text: "",
-						type: "success"
-					});
-					localStorageService.set('userSession', JSON.stringify(user));
-					$state.go('findlocation');
-				}
-			});
-		}
+		swal({
+			title: 'Dados cadastrados com sucesso!',
+			text: "",
+			type: "success"
+		});
+		localStorageService.set('userSession', 'anon');
+		$state.go('findlocation');
 	};
 
 	var _validateUserData = function(user) {

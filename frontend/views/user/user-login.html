@@ -5,14 +5,10 @@
             <input type="email" class="text-box form-control" ng-model="user.email" placeholder="Digite seu E-mail">
             <label class="input-text">Senha</label>
             <input type="password" class="text-box form-control" ng-model="user.password" placeholder="Digite sua senha">
-            <div class="checkbox">
-                <label class="text-checkbox">
-                    <input type="checkbox" ng-model="user.simulation">Modo de simulação
-                </label>
-            </div>
             <button type="submit" class="button btn btn-danger btn-block">ENTRAR</button>
         </form>
         <a type="button" ng-click="openWindow('userRegister')" class="button btn btn-primary btn-block">CADASTRE-SE</a>    
         <a type="button" ng-click="doLogin('anon', user.simulation)" class="button btn btn-warning btn-block">ENTRAR SEM LOGIN</a>
+        <p>Versão Demo 1.0</p>
     </div>
 </div>

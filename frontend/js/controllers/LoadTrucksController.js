@@ -113,7 +113,7 @@ foundtruck.controller('LoadTrucksController', ['$scope', 'LoadTrucksService', 'l
 				iconPath = "img/markers/blue.png";
 				break;
 			case 3:
-				iconPath = "img/markers/vegan.png";
+				iconPath = "img/markers/green.png";
 				break;
 			case 4:
 				iconPath = "img/markers/light-blue.png";

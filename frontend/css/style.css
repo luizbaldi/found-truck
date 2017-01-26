@@ -384,3 +384,10 @@ input:checked + .slider:before {
     display: inline-block;
     float: left;
 }
+
+#login p {
+	color: #dedcdc;
+	margin-top: 20px;
+	text-align: left;
+	margin-left: 20px;
+}
