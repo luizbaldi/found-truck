@@ -1,18 +1,21 @@
-foundtruck.controller('LoadTrucksController', ['$scope', 'LoadTrucksService', 'localStorageService', '$state', 'UtilService', '$uibModal', function($scope, LoadTrucksService, localStorageService, $state, UtilService, $uibModal) {
+foundtruck.controller('LoadTrucksController', ['$scope', 'TrucksService', 'localStorageService', '$state', 'UtilService', '$uibModal', function($scope, TrucksService, localStorageService, $state, UtilService, $uibModal) {
 	$scope.loadMap = function() {
 		var addressTypeFlag = localStorageService.get('addressTypeFlag');
+		var simulation = localStorageService.get('simulation');
 
 		if (addressTypeFlag == 'findlocation') {
 			var geocodedAddress = JSON.parse(localStorageService.get('geocodedAddress'));
 
 			/* If address was created on findme button it goes directly to create map function */
-			LoadTrucksService.success(function(response) {
-				if(response['error']){
+			TrucksService.loadTrucks()
+			.success(function(response) {
+				if(response['error'] && !simulation){
 					swal({
 						title: 'Não foi possível carregar os food trucks.',
 						text: "",
-						type: "error"
+						type: "error",
 					});
+					$state.go('findlocation');
 				}else{
 					var trucksAddress =  response['data'];
 					createMap(geocodedAddress, trucksAddress);
@@ -21,13 +24,15 @@ foundtruck.controller('LoadTrucksController', ['$scope', 'LoadTrucksService', 'l
 		} else if (addressTypeFlag == 'alternative') {
 			var userLocation = JSON.parse(localStorageService.get('address'));
 			
-			LoadTrucksService.success(function(trucksAddress) {
-				if(response['error']){
+			TrucksService.loadTrucks()
+			.success(function(trucksAddress) {
+				if(response['error'] && !simulation){
 					swal({
 						title: 'Não foi possível carregar os food trucks.',
 						text: "",
 						type: "error"
 					});
+					$state.go('findlocation');
 				}else{
 					var trucksAddress =  response['data'];
 					geocodeUserLocation(userLocation, trucksAddress);
@@ -131,7 +136,7 @@ foundtruck.controller('LoadTrucksController', ['$scope', 'LoadTrucksService', 'l
 				iconPath = "img/markers/blue.png";
 				break;
 			case 3:
-				iconPath = "img/markers/vegan.png";
+				iconPath = "img/markers/green.png";
 				break;
 			case 4:
 				iconPath = "img/markers/light-blue.png";
@@ -151,6 +156,22 @@ foundtruck.controller('LoadTrucksController', ['$scope', 'LoadTrucksService', 'l
 			icon: iconPath
 		});
 		marker.setMap(map);
+
+		// Adding marker events listeners
+		marker.addListener('click', function() {
+			// Set selected hydrant and opens modal
+			TrucksService.selectedTruck = {
+				'title': title,
+				'markerType': markerType
+			};
+
+			$uibModal.open({
+				animation: true,
+				templateUrl: 'custom-templates/truck-details.html',
+				controller: 'ModalController',
+				size: 'md'
+			});
+		});
 	};
 
 	$scope.openSubtitle = function() {
