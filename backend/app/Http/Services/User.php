@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\DB;
 use MongoDB\BSON\ObjectId; 
 
 class User {
+
 	public function __construct(){
 
 	}
@@ -27,10 +28,9 @@ class User {
             if($encryptedUserPassword == $password){
                 $userData = array(
                     'id' => (string)$user['_id'],
-                    'name' => $user['name'],
                     'email' => $user['email'],
-                    'personalData'  => $user['personalData'];
-                    'trucks'        => $trucks;
+                    'personalData'  => $user['personalData'],
+                    'trucks'        => $trucks
                 );
                 return $userData;
             } else {
@@ -44,16 +44,15 @@ class User {
         $user = \App\Models\User::find($userId);
         $user->delete();
     } 
-    public function create($userName, $userMail, $userPassword, $personalData, trucks){
+    public function create($userMail, $userPassword, $personalData, $trucks){
         $isEmailAlreadyUsed = DB::table('user')
                             ->select('*')
                             ->where('email', '=', $userMail)
                             ->first();
 
         if($isEmailAlreadyUsed == null){
-            $password = md5($userPassword);
+            $password = $userPassword;
             $user = new \App\Models\User;
-            $user->name         = $userName;
             $user->email        = $userMail;
             $user->password     = $password;
             $user->personalData = $personalData;
@@ -76,7 +75,7 @@ class User {
         if(!empty($user)){
             $userData     = array();
             $personalData = array();
-            if(isset($user['trucks']){
+            if(isset($user['trucks'])){
                 $userData['trucks'] = $trucks;
             }
             $userData['id']           = (string)$user['_id'];
@@ -89,7 +88,7 @@ class User {
         return false;
     }
 
-    public function edit($userName, $userMail, $userPassword, $personalData, trucks){
+    public function edit($userName, $userMail, $userPassword, $personalData, $trucks){
         $user = DB::table('user')
                             ->select('*')
                             ->where('email', '=', $userMail)

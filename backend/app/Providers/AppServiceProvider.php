@@ -32,12 +32,12 @@ class AppServiceProvider extends ServiceProvider {
 			'App\Services\Registrar'
 		);
 
-		$this->app->singleton('Service\FoodTruck', function($app)
+		$this->app->singleton('App\Http\Services\FoodTruck', function($app)
 		{
     		return new FoodTruck();
 		});
 
-		$this->app->singleton('Service\User', function($app)
+		$this->app->singleton('App\Http\Services\User', function($app)
 		{
     		return new User();
 		});

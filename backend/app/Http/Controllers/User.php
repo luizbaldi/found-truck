@@ -7,13 +7,13 @@ use Illuminate\Http\Response;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use App\Http\Services\User;
+use App\Http\Services\User as UserService;
 
 class User extends Controller {
 	
 	protected $userService;
 
-	public function __construct(User $userService){
+	public function __construct(UserService $userService){
 		$this->userService = $userService;
 	}
 
@@ -32,9 +32,9 @@ class User extends Controller {
 		        }
 				$email     	  = $userData['email'];
 			    $password  	  = md5($userData['password']);
-			   
+
 			   	//Contains user data or false
-				$ableToRegister = $this->userService->register($email, $password, $personalData, $trucks);
+				$ableToRegister = $this->userService->create($email, $password, $personalData, $trucks);
 
 				if($ableToRegister){
 					$responseContent['error']    = false;
@@ -115,13 +115,11 @@ class User extends Controller {
 
 		try{
 			$userData = $request->all();
-			var_dump($userData); die;
-			$userMail = $userData['login'];
+			$userMail = $userData['email'];
 			$userPassword = $userData['password'];
 
 			//Contains user data or false
 			$attemptLogin = $this->userService->login($userMail, $userPassword);
-
 			if($attemptLogin){
 				$responseContent['error']   = false;
 		        $responseContent['message'] = 'Login successful.';

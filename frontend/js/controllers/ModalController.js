@@ -1,4 +1,4 @@
-foundtruck.controller('ModalController', ['$scope', function($scope) {
+foundtruck.controller('ModalController',['$scope', 'TrucksService', function($scope, TrucksService) {
 	/* Subtitle
 	'Roxo - Sua Localização',
 	'Preto - Comida Chinesa',
@@ -33,4 +33,8 @@ foundtruck.controller('ModalController', ['$scope', function($scope) {
 			description: 'Cachorro Quente'
 		}
 	];
+
+	$scope.loadTruckData = function() {
+		$scope.selectedTruck = TrucksService.selectedTruck;
+	};
 }]);
