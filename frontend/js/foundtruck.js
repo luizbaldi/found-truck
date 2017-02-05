@@ -28,6 +28,11 @@ foundtruck.config(function($stateProvider, $urlRouterProvider) {
             url: '/userRegister',
             controller: 'UserRegisterController',
             templateUrl: 'views/user-register.html' 
+        })
+        .state('editUser', {
+            url: '/editUser',
+            controller: 'EditUserController',
+            templateUrl: 'views/edit-user.html' 
         });
 });
 

@@ -17,10 +17,10 @@ foundtruck.controller('UserLoginController', ['$scope','UserService', '$state', 
 						text: "",
 						type: "success"
 					});
-					localStorageService.set('userSession', JSON.stringify(user));
+					localStorageService.set('userSession', JSON.stringify(response.userData));
 					$state.go('findlocation');
 				}
-			})
+			});
 		} else {
 			localStorageService.set('userSession', 'anon');
 			$state.go('findlocation');

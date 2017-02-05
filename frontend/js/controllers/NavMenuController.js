@@ -11,7 +11,7 @@ foundtruck.controller('NavMenuController', ['$scope','localStorageService', '$st
 
 			var userData = JSON.parse(userSession);
 
-			$scope.name = userData.personalData[0].name;
+			$scope.name = userData.name;
 		}
 	};
 
@@ -23,4 +23,8 @@ foundtruck.controller('NavMenuController', ['$scope','localStorageService', '$st
 		
 		$state.go('userLogin');
 	}
+
+	$scope.editUserData = function() {
+		$state.go('editUser');
+	};
 }]);

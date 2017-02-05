@@ -1,7 +1,7 @@
-foundtruck.controller('UserRegisterController', ['$scope', 'UtilService', 'UserService', function($scope, UtilService, UserService) {
+foundtruck.controller('UserRegisterController', ['$scope', 'UtilService', 'UserService', 'localStorageService', '$state', function($scope, UtilService, UserService, localStorageService, $state) {
 	
 	$scope.goBack = function() {
-		window.history.back();
+		UtilService.goBack();
 	};
 
 	$scope.register = function(user) {

@@ -8,4 +8,7 @@ foundtruck.service('UtilService', function() {
 	    return (value === undefined || value == null || value.length <= 0 || value == "") ? true : false;
 	}
 
+	this.goBack = function() {
+		window.history.back();
+	};
 });
