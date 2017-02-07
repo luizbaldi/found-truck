@@ -23,7 +23,7 @@ class User extends Controller {
 			$userData = $request->all();
 			if (!empty($userData)) {
 				$trucks 	  = null;
-			    $personalData = null;
+			    $name = null;
 		        if(isset($userData['trucks'])){
 		       	 	$trucks   = $userData['trucks'];	
 		        }
@@ -82,7 +82,6 @@ class User extends Controller {
 			$userData = $request->all();
 			if (!empty($userData)) {
 				$trucks 	  = null;
-			    $personalData = null;
 		        if(isset($userData['trucks'])){
 		       	 	$trucks   = $userData['trucks'];	
 		        }

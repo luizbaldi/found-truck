@@ -41,7 +41,7 @@ foundtruck.service('UserService', function($http) {
 		var httpRequest = $http(
 			{
 				method  : 'POST',
-	        	url     : '../backend/public/index.php/user/update',
+	        	url     : '../backend/public/index.php/user/edit',
 	       		data    :  JSON.stringify(user),  
 	       		dataType: 'json'
   	    	}
