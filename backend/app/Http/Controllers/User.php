@@ -27,14 +27,12 @@ class User extends Controller {
 		        if(isset($userData['trucks'])){
 		       	 	$trucks   = $userData['trucks'];	
 		        }
-		        if(isset($userData['personalData'])){
-		       	 	$personalData = $userData['personalData'];	
-		        }
 				$email     	  = $userData['email'];
 			    $password  	  = md5($userData['password']);
+			    $name         = $userData['name'];
 
 			   	//Contains user data or false
-				$ableToRegister = $this->userService->create($email, $password, $personalData, $trucks);
+				$ableToRegister = $this->userService->create($email, $password, $name, $trucks);
 
 				if($ableToRegister){
 					$responseContent['error']    = false;
@@ -88,12 +86,10 @@ class User extends Controller {
 		        if(isset($userData['trucks'])){
 		       	 	$trucks   = $userData['trucks'];	
 		        }
-		        if(isset($userData['personalData'])){
-		       	 	$personalData = $userData['personalData'];	
-		        }
 				$email     	  = $userData['email'];
 			    $password  	  = md5($userData['password']);
-			   	$userData     = $this->userService->edit($email, $password, $personalData, $trucks);
+			    $name         = $userData['name'];
+			   	$userData     = $this->userService->edit($email, $password, $name, $trucks);
 				$responseContent['error']    = false;
     	        $responseContent['message']  = 'User edited.';
     	        $responseContent['userData'] = $userData;

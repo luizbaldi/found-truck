@@ -29,7 +29,7 @@ class User {
                 $userData = array(
                     'id' => (string)$user['_id'],
                     'email' => $user['email'],
-                    'personalData'  => $user['personalData'],
+                    'name'  => $user['name'],
                     'trucks'        => $trucks
                 );
                 return $userData;
@@ -44,7 +44,7 @@ class User {
         $user = \App\Models\User::find($userId);
         $user->delete();
     } 
-    public function create($userMail, $userPassword, $personalData, $trucks){
+    public function create($userMail, $userPassword, $name, $trucks){
         $isEmailAlreadyUsed = DB::table('user')
                             ->select('*')
                             ->where('email', '=', $userMail)
@@ -55,7 +55,7 @@ class User {
             $user = new \App\Models\User;
             $user->email        = $userMail;
             $user->password     = $password;
-            $user->personalData = $personalData;
+            $user->name = $name;
             if($trucks != null){
                 $user->$trucks = $trucks;
             }
@@ -74,13 +74,12 @@ class User {
 
         if(!empty($user)){
             $userData     = array();
-            $personalData = array();
             if(isset($user['trucks'])){
                 $userData['trucks'] = $trucks;
             }
             $userData['id']           = (string)$user['_id'];
             $userData['email']        = $user['email'];
-            $userData['personalData'] = $user['personalData'];
+            $userData['name'] = $user['name'];
             
             return $userData;
         }
@@ -88,7 +87,7 @@ class User {
         return false;
     }
 
-    public function edit($userName, $userMail, $userPassword, $personalData, $trucks){
+    public function edit($userName, $userMail, $userPassword, $name, $trucks){
         $user = DB::table('user')
                             ->select('*')
                             ->where('email', '=', $userMail)
@@ -98,7 +97,7 @@ class User {
                 $user->password = md5($userPassword);
             }    
         }   
-        $user->personalData = $personalData;
+        $user->name = $name;
         $user->trucks       = $trucks;
         $user->save();
         $userData  = $this->saveDataAfterRegister($userMail);
