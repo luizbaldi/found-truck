@@ -87,18 +87,13 @@ class User {
         return false;
     }
 
-    public function edit($userName, $userMail, $userPassword, $name, $trucks){
+    public function edit($userId, $userMail, $name, $trucks){
         $user = DB::table('user')
                             ->select('*')
-                            ->where('email', '=', $userMail)
-                            ->first();
-        if($user){                  
-            if($password != null){
-                $user->password = md5($userPassword);
-            }    
-        }   
+                            ->where('_id', '=', $userId)
+                            ->first(); 
         $user->name = $name;
-        $user->trucks       = $trucks;
+        $user->trucks = $trucks;
         $user->save();
         $userData  = $this->saveDataAfterRegister($userMail);
         return $userData;

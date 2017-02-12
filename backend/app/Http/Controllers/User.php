@@ -85,10 +85,11 @@ class User extends Controller {
 		        if(isset($userData['trucks'])){
 		       	 	$trucks   = $userData['trucks'];	
 		        }
+		        $userId       = $userData['id']; 
 				$email     	  = $userData['email'];
-			    $password  	  = md5($userData['password']);
 			    $name         = $userData['name'];
-			   	$userData     = $this->userService->edit($email, $password, $name, $trucks);
+			   	$userData     = $this->userService->edit($userId, $email, $name, $trucks);
+			    var_dump($userData); die;
 				$responseContent['error']    = false;
     	        $responseContent['message']  = 'User edited.';
     	        $responseContent['userData'] = $userData;

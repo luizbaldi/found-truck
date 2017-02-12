@@ -31,6 +31,14 @@ foundtruck.controller('ModalController',['$scope', 'TrucksService', function($sc
 		{
 			color: '#ed3237',
 			description: 'Cachorro Quente'
+		},
+		{
+			color: '#8d3031',
+			description: 'Espetos e Churrasco'
+		},
+		{
+			color: '#fff212',
+			description: 'Pizza'
 		}
 	];
 

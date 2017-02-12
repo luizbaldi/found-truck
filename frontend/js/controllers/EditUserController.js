@@ -1,4 +1,4 @@
-foundtruck.controller('EditUserController', ['$scope', 'localStorageService', 'UtilService', 'UserService', function($scope, localStorageService, UtilService, UserService) {
+foundtruck.controller('EditUserController', ['$scope', 'localStorageService', 'UtilService', 'UserService', '$state', function($scope, localStorageService, UtilService, UserService, $state) {
 	
 	$scope.loadUserData = function() {
 		var userSession = localStorageService.get('userSession');
@@ -22,7 +22,7 @@ foundtruck.controller('EditUserController', ['$scope', 'localStorageService', 'U
 					type: "success"
 				});
 				localStorageService.set('userSession', JSON.stringify(response.userData));
-				$state.go('findlocation');
+				// $state.go('findlocation');
 			}
 		})
 	};

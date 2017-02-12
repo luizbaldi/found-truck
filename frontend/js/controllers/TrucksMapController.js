@@ -7,7 +7,7 @@ foundtruck.controller('TrucksMapController', ['$scope', '$uibModal', 'TrucksServ
 			var geocodedAddress = JSON.parse(localStorageService.get('geocodedAddress'));
 
 			if (simulation) {
-				var trucksAddress = _simulateTrucksAddress(geocodedAddress, 4);
+				var trucksAddress = _simulateTrucksAddress(geocodedAddress, 5);
 				createMap(geocodedAddress, trucksAddress);
 			} else {
 				/* If address was created on findme button it goes directly to create map function */
@@ -89,7 +89,7 @@ foundtruck.controller('TrucksMapController', ['$scope', '$uibModal', 'TrucksServ
 			currentAddress.longitude = geocodedAddress.lng + UtilService.getRandomNumber(-0.02, 0.02);
 			
 			// Adding a new marker for the object
-			currentAddress.truckType = Math.floor(Math.random() * (5 - 1) + 1) + 1;
+			currentAddress.truckType = parseInt(UtilService.getRandomNumber(1, 8));
 
 			trucksAddress.push(currentAddress);
 		}
@@ -132,27 +132,39 @@ foundtruck.controller('TrucksMapController', ['$scope', '$uibModal', 'TrucksServ
 		1 - Chinese (black)
 		2 - Regional food (blue)
 		3 - Vegan (green)	
-		4 - Pasta (light-blue)
+		4 - Pasta (light-yellow)
 		5 - Hot-dog (red)
+		6 - Sweets (pink)
+		7 - Barbecue (brown)
+		8 - Pizza (yellow)
 		*/
 		switch (markerType) {
 			case 0:
-				iconPath = "img/markers/purple.png";
+				iconPath = "img/markers/orange.png";
 				break;
 			case 1:
-				iconPath = "img/markers/black.png";
+				iconPath = "img/markers/japa.png";
 				break;
 			case 2:
-				iconPath = "img/markers/blue.png";
+				iconPath = "img/markers/hamburger.png";
 				break;
 			case 3:
 				iconPath = "img/markers/green.png";
 				break;
 			case 4:
-				iconPath = "img/markers/light-blue.png";
+				iconPath = "img/markers/pasta.png";
 				break;
 			case 5:
-				iconPath = "img/markers/red.png";
+				iconPath = "img/markers/hotdog.png";
+				break;
+			case 6:
+				iconPath = "img/markers/sweet.png";
+				break;
+			case 7:
+				iconPath = "img/markers/barbecue.png";
+				break;
+			case 8:
+				iconPath = "img/markers/pizza.png";
 				break;
 			default:
 				iconPath = "img/markers/orange.png";

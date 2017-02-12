@@ -26,5 +26,6 @@ foundtruck.controller('NavMenuController', ['$scope','localStorageService', '$st
 
 	$scope.editUserData = function() {
 		$state.go('editUser');
+		$uibModalInstance.close();
 	};
 }]);
