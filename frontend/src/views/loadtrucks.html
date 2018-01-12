@@ -1,0 +1,14 @@
+<div ui-view ng-init="loadMap()">
+	<header-foundtruck></header-foundtruck>
+    <trucks-map></trucks-map>
+    <div class="footer">
+    	<div class="action pull-left" ng-click=goBack();>
+    		<i class="fa fa-angle-left"></i>
+    		<span>Voltar</span>
+    	</div>
+    	<div class="action pull-right" ng-click=openSubtitle();>
+    		<span>Legenda</span>
+    		<i class="fa fa-info-circle"></i>
+    	</div>
+    </div>
+</div>  

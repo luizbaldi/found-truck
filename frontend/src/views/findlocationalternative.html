@@ -1,0 +1,52 @@
+<div ui-view>
+    <header-foundtruck></header-foundtruck>
+    <div class="mobile">
+        <div id="findlocationalternative" class="col-md-6 col-md-offset-3 col-xs-10 col-xs-offset-1">
+            <form class="text-center" ng-submit="loadTrucks(address)">
+                <label class="find2lbl col-md-12 col-xs-12">DADOS ENDEREÇO</label>
+                <select id="cbxEstado" name="selectbasic" class="form-control" ng-model="address.state" ng-required="true">
+                    <option value="" disabled selected>ESTADO</option>
+                    <option value="AC">AC</option>
+                    <option value="AL">AL</option>
+                    <option value="AM">AM</option>
+                    <option value="AP">AP</option>
+                    <option value="BA">BA</option>
+                    <option value="CE">CE</option>
+                    <option value="DF">DF</option>
+                    <option value="ES">ES</option>
+                    <option value="GO">GO</option>
+                    <option value="MA">MA</option>
+                    <option value="MG">MG</option>
+                    <option value="MS">MS</option>
+                    <option value="MT">MT</option>
+                    <option value="PA">PA</option>
+                    <option value="PB">PB</option>
+                    <option value="PE">PE</option>
+                    <option value="PI">PI</option>
+                    <option value="PR">PR</option>
+                    <option value="RJ">RJ</option>
+                    <option value="RN">RN</option>
+                    <option value="RO">RO</option>
+                    <option value="RS">RS</option>
+                    <option value="SC">SC</option>
+                    <option value="SE">SE</option>
+                    <option value="SP">SP</option>
+                    <option value="TO">TO</option>
+                </select>
+
+                <input type="text" class="find2txt form-control" placeholder="CIDADE" 
+                    ng-model="address.city" ng-required="true"/>
+                <input type="text" class="find2txt form-control" placeholder="DIGITE SEU ENDEREÇO" 
+                    ng-model="address.street" ng-required="true"/>
+                <input type="number" class="find2txt form-control" placeholder="N° CASA/APARTAMENTO" 
+                    ng-model="address.number" ng-required="true"/>
+
+                <a href="#findlocation">
+                    <button class="find2btn btn btn-danger col-md-1"> <i class="fa fa-chevron-left"></i>
+                    </button>
+                </a>
+                <button class="find2btn btn btn-danger col-md-10 col-md-offset-1">BUSCAR FOODTRUCKS</button>
+            </form>
+        </div>
+    </div>
+</div>
