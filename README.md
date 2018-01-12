@@ -6,7 +6,7 @@ Built with AngularJS and Bootstrap, the system is currently being developed.
 ## Demo
 https://luizbaldi.github.io/found-truck/frontend
 
-##Contributors
-###Luiz Baldi
-###Leonardo Pego
-###Luis Philipe Fidelis
+## Contributors
+- Luiz Baldi
+- Leonardo Pego
+- Luis Philipe Fidelis
